@@ -4,21 +4,19 @@
 <meta charset=UTF-8>
 <meta name=viewport content="width=device-width,initial-scale=1,shrink-to-fit=no">
 <meta http-equiv=X-UA-Compatible content="ie=edge">
-<title>Products | Rapisurv</title>
-<link rel=stylesheet href=style.css>
+<title>Contact | Rapisurv</title>
 <link rel=stylesheet href=https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/css/bootstrap.min.css>
 <script src=https://code.jquery.com/jquery-3.4.1.slim.min.js></script>
 <script src=https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/js/bootstrap.min.js></script>
-<script src=https://cdn.jsdelivr.net/npm/glider-js@1/glider.min.js></script>
-<link href=https://cdn.jsdelivr.net/npm/glider-js@1/glider.min.css rel=stylesheet>
+<link rel=stylesheet href=style.css>
 <script src=https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js></script>
+
  <!-- icons -->
  <script src="https://unpkg.com/ionicons@5.4.0/dist/ionicons.js"></script>
-<link rel="stylesheet" href="normalize.css">
-<script src="js/modernizr-2.6.2.min.js"></script>
 <link rel=icon type=image/png sizes=64x64 href=assets/images/favicon2.png>
 </head>
-<body>
+<body style="background-image: url(assets/images/bg.png);
+background-size: 100% 100%;">
     <nav class="nav">
       <a href="index.html">
         <div class="logo">
@@ -27,9 +25,9 @@
       </a>
         <ul class="nav-links">
           <li><a href="index.html">Home</a></li>
-          <li><a class="current-nav" href="#">Products</a></li>
+          <li><a href="products.html">Products</a></li>
           <li><a href="pricing.html">Pricing</a></li>
-          <li><a href="contact.html">Contact</a></li>
+          <li><a class="current-nav" href="contact.html">Contact</a></li>
           <li><a href="#">Log In</a></li>
           <li><a href="#"><button>Sign Up</button></a></li>
         </ul>
@@ -39,52 +37,113 @@
           <div class="line3"></div>
         </div>
       </nav>
-    <section id="about">
-      <div class="container">
-        <!-- <h2 class="products-title">Rapisurv Products</h2> -->
-        <div class="rapisurv-mockup">
-          <img src="./assets/images/Rapisurv Mockup.png" alt="">
+
+      <section id="contact">
+  
+        <h1 class="section-header">Contact</h1>
+        
+        <div class="contact-wrapper">
+        
+        <!-- Left contact page --> 
+          
+          <form id="contact-form" class="form-horizontal" role="form">
+             
+            <div class="form-group">
+              <div class="col-sm-12">
+                <input type="text" class="form-control" id="orgname" placeholder="Organization Name" name="orgname" value="" required>
+              </div>
+            </div>
+             
+            <div class="form-group">
+              <div class="col-sm-12">
+                <input type="text" class="form-control" id="country" placeholder="Country" name="country" value="" required>
+              </div>
+            </div>
+             
+            <div class="form-group">
+              <div class="col-sm-12">
+                
+                <select id="typeoforg" required>
+                  <option value="" disabled selected>Type of Organization</option>
+                  <option>Consulting</option>
+                  <option>Contracting</option>
+                  <option>Client</option>
+                </select>
+              </div>
+            </div>
+             
+            <div class="form-group">
+              <div class="col-sm-12">
+                <input type="text" class="form-control" id="orgwebsite" placeholder="Organization Website (optional)" name="Organization Website" value="">
+              </div>
+            </div>
+             
+            <div class="form-group">
+              <div class="col-sm-12">
+                <input type="text" class="form-control" id="contactname" placeholder="Contact Person" name="name" value="" required>
+              </div>
+            </div>
+      
+            <div class="form-group">
+              <div class="col-sm-12">
+                <input type="email" class="form-control" id="email" placeholder="E-mail" name="email" value="" required>
+              </div>
+            </div>
+         
+            <div class="form-group">
+              <div class="col-sm-12">
+                <input type="text" class="form-control" id="phone" placeholder="Phone (optional)" name="phone" value="">
+              </div>
+            </div>
+
+            <textarea class="form-control" rows="10" placeholder="Message" name="message" required></textarea>
+            
+            <br><br>
+            <button id="submit" type="submit" value="SEND">
+              Send Message
+            </button>
+            
+          </form>
+          
+        <!-- Left contact page --> 
+          
+            <div class="direct-contact-container">
+      
+              <ul class="contact-list">
+                <li class="list-item"><ion-icon name="location"></ion-icon><span class="contact-text place">
+                  Smyrna, GA 30080, USA</span></li>
+                
+                <li class="list-item"><ion-icon name="call"></ion-icon><span class="contact-text phone"><a href="tel:1-212-555-5555" title="Give us a call">(212) 555-2368</a></span></li>
+                
+                <li class="list-item"><ion-icon name="mail"></ion-icon><span class="contact-text gmail"><a href="mailto:#" title="Send me an email">info@rapisurv.com</a></span></li>
+                
+              </ul>
+      
+              <hr>
+              <ul class="social-media-list">
+                <li><a href="#" target="_blank" class="contact-icon">
+                  <ion-icon name="logo-facebook"></ion-icon></a>
+                </li>
+                <li><a href="#" target="_blank" class="contact-icon">
+                  <ion-icon name="logo-twitter"></ion-icon></a>
+                </li>
+                <li><a href="#" target="_blank" class="contact-icon">
+                  <ion-icon name="logo-instagram"></ion-icon></a>
+                </li>
+                <li><a href="#" target="_blank" class="contact-icon">
+                  <ion-icon name="logo-youtube"></ion-icon></a>
+                </li>       
+              </ul>
+              <hr>
+      
+      
+            </div>
+          
         </div>
-      </div>
-    </section>
-
-    <section id=products-about>
-      <div class=container>
-      <div class=row>
-      <div class="products-about-p">
-        <p><strong>Takeoff</strong><br>
-          Takeoff with a simple and familiar interface like you would on paper, but with the benefit of predefined elements, items, and descriptions that are in line with standard methods of measurement. You can distribute project tasks among your team members and be able use timesing, dimensions and get automatic squaring 
-          <br><br>
-
-        <strong>Billing</strong><br>
-          The Billing application does automatic abstracting and generates a bill of quantities from your takeoff including custom or rogue items you may have included with the option to include preliminaries. You have the option to share a bill of quantity with your partners, contractors, or subcontractors from Rapisurv and they will be able to price the bill of quantities in their our Rapisurv account 
-          <br><br>
-
-        <strong>Estimating</strong><br>
-          Our estimating application can generate estimates for bill of quantities and give the freedom to adjust calculated rates as preferred on a line-item level and a global project level for the whole bill of quantities. The estimation module automatically calculates the estimates based on most recent prices available in the user’s account, the estimates can also be created in multiple versions for internal review and comparison based on different scenarios. 
-          <br><br>
-
-        <strong>Materials</strong><br>
-          The material generator can calculate all materials required for predefined descriptions in the bill of quantities and create a list of materials along with the quantities in their respective units, this can help contractors, or their procurement teams identify and confirm requirements faster and to manage procurement better
-          <br><br>
-
-        <strong>Tendering</strong> <br>
-          The Tenders application compiles contract RFQ or RFP documents along with the preambles and bill of quantities to create complete bidding documents to share with invited parties in soft copies and can be printed.
-          <br><br>
-
-        <strong>Bid & Contract</strong><br>
-          The Bid & Contract application enables bidders to submit their priced bill of quantities back to the user that shared the bill of quantities with them. This module eliminates multiple data entry tasks on the side of the bidder and the client and the client side or the bid reviewer can compare multiple bids in same view to help with review and decision making, a bid can then be selected for contract awarded and the selected bid can be awarded in the system.
-          <br><br>
-
-        <strong>Valuations & Variations</strong><br>
-          The Valuations part of the application is used to enter measured work in Rapisurv, and the system can calculate the value and keep tract of the valuation in the life of the contract, it can also be used to generate valuation certificates issued to contractors and account payables for record and payments processing. The Variations application enables the user to manage scope changes where applicable, when there is variance between billed quantity and measured works, the user can update contract by creating a variation certificate for the contract and the contract value will be updated.
-      </p>
-      </div>
-      
-      </div>
-      </div>
-      
-      </section>
+        
+      </section>  
+        
+        
 
       <footer class=site-footer id=footer-contact>
         <div class=container>
@@ -165,5 +224,6 @@
         </div>
         </footer>
         <script src="js/script.js"></script>
+        <script src="https://unpkg.com/@lottiefiles/lottie-player@latest/dist/lottie-player.js"></script>
         </body>
         </html>

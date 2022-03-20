@@ -31,7 +31,8 @@
         <ul class="nav-links">
           <li><a href="index.html">Home</a></li>
           <li><a href="products.html">Products</a></li>
-          <li><a href="#">Pricing</a></li>
+          <li><a class="current-nav" href="#">Pricing</a></li>
+          <li><a href="contact.html">Contact</a></li>
           <li><a href="#">Log In</a></li>
           <li><a href="#"><button>Sign Up</button></a></li>
         </ul>
@@ -43,16 +44,23 @@
       </nav>
     <div class="header">
         <div class="inner-header flex">
-        <section class="section">
-          <div class="years-pricing">
-            <p class="monthly" id="monthly" onclick="monthly()">Monthly</p>
-            <p class="oneyear" id="oneyear" onclick="oneyear()">1 year</p>
-            <p class="twoyears" id="twoyears" onclick="twoyears()">2 years</p>
-          </div>
+        <section class="section"> 
+          <select>
+            <option selected disabled value="">Choose Currency ($)</option>
+            <option value="1">Nigerian Naira (NGN)</option>
+            <option value="2">United States Dollar (USD)</option>
+          </select>
 
+          <!-- Dollar Comparison Table -->
+          <div class="dollarcomp">
+            <div class="years-pricing">
+              <p class="monthly" id="monthly" onclick="dollarmonthly()">Monthly</p>
+              <p class="oneyear" id="oneyear" onclick="dollaroneyear()">Yearly</p>
+              <p class="twoyears" id="twoyears" onclick="dollartwoyears()">2 years</p>
+            </div>
           <!-- Monthly Pricing Table -->
-                <div class="pricing pricing-palden" style="margin-top: 3rem;">
-                    <div class="pricing-item features-item ja-animate" data-animation="move-from-bottom" data-delay="item-0" style="min-height: 497px;">
+                <div class="pricing dollar-pricing pricing-palden" style="margin-top: 3rem;">
+                    <div class="pricing-item features-item ja-animate" data-animation="move-from-bottom" data-delay="item-1" style="min-height: 497px;">
                         <div class="pricing-deco">
                             <svg class="pricing-deco-img" enable-background="new 0 0 300 100" height="100px" id="Layer_1" preserveAspectRatio="none" version="1.1" viewBox="0 0 300 100" width="300px" x="0px" xml:space="preserve" y="0px">
                                 <path class="deco-layer deco-layer--1" d="M30.913,43.944c0,0,42.911-34.464,87.51-14.191c77.31,35.14,113.304-1.952,146.638-4.729c48.654-4.056,69.94,16.218,69.94,16.218v54.396H30.913V43.944z" fill="#FFFFFF" opacity="0.6"></path>
@@ -60,19 +68,26 @@
                                 <path class="deco-layer deco-layer--3" d="M43.415,98.342c0,0,48.283-68.927,109.133-68.927c65.886,0,97.983,67.914,97.983,67.914v3.716H42.401L43.415,98.342z" fill="#FFFFFF" opacity="0.7"></path>
                                 <path class="deco-layer deco-layer--4" d="M-34.667,62.998c0,0,56-45.667,120.316-27.839C167.484,57.842,197,41.332,232.286,30.428c53.07-16.399,104.047,36.903,104.047,36.903l1.333,36.667l-372-2.954L-34.667,62.998z" fill="#FFFFFF"></path>
                             </svg>
-                            <div class="pricing-price"><span class="pricing-currency">$</span>350
-                                <span class="pricing-period">/ day</span>
-                            </div>
-                            <h3 class="pricing-title">Basic</h3>
+                            <h3 class="pricing-title">Standard</h3>
+                            <div class="pricing-price"><span class="pricing-currency">$</span>100
+                                <span class="pricing-period">/ month</span>
+                            </div>   
                         </div>
                         <ul class="pricing-feature-list">
-                            <li class="pricing-feature">1 Pages/Screens</li>
-                            <li class="pricing-feature">Responsive Design</li>
-                            <li class="pricing-feature">Content Upload</li>
+                            <li class="pricing-feature">Takeoff</li>
+                            <li class="pricing-feature">Bill of quantities</li>
+                            <li class="pricing-feature">Estimating</li>
+                            <li class="pricing-feature">-</li>
+                            <li class="pricing-feature">-</li>
+                            <li class="pricing-feature">-</li>
+                            <li class="pricing-feature">-</li>
+                            <li class="pricing-feature">-</li>
+                            <li class="pricing-feature">-</li>
+                            <li class="pricing-feature">Single User</li>
                         </ul>
                         <button>Choose plan</button>
                     </div>
-                    <div class="pricing-item features-item ja-animate pricing__item--featured" data-animation="move-from-bottom" data-delay="item-1" style="min-height: 497px;">
+                    <div class="pricing-item features-item ja-animate pricing__item--featured" data-animation="move-from-bottom" data-delay="item-2" style="min-height: 497px;">
                         <div class="pricing-deco" style="background: linear-gradient(135deg,#fea03b,#fdda4e)">
                             <svg class="pricing-deco-img" enable-background="new 0 0 300 100" height="100px" id="Layer_1" preserveAspectRatio="none" version="1.1" viewBox="0 0 300 100" width="300px" x="0px" xml:space="preserve" y="0px">
                                 <path class="deco-layer deco-layer--1" d="M30.913,43.944c0,0,42.911-34.464,87.51-14.191c77.31,35.14,113.304-1.952,146.638-4.729c48.654-4.056,69.94,16.218,69.94,16.218v54.396H30.913V43.944z" fill="#FFFFFF" opacity="0.6"></path>
@@ -80,43 +95,26 @@
                                 <path class="deco-layer deco-layer--3" d="M43.415,98.342c0,0,48.283-68.927,109.133-68.927c65.886,0,97.983,67.914,97.983,67.914v3.716H42.401L43.415,98.342z" fill="#FFFFFF" opacity="0.7"></path>
                                 <path class="deco-layer deco-layer--4" d="M-34.667,62.998c0,0,56-45.667,120.316-27.839C167.484,57.842,197,41.332,232.286,30.428c53.07-16.399,104.047,36.903,104.047,36.903l1.333,36.667l-372-2.954L-34.667,62.998z" fill="#FFFFFF"></path>
                             </svg>
-                            <div class="pricing-price"><span class="pricing-currency">$</span>3499
+                            <h3 class="pricing-title">Expert</h3>
+                            <div class="pricing-price"><span class="pricing-currency">$</span>200
                                 <span class="pricing-period">/ month</span>
                             </div>
-                            <h3 class="pricing-title">Standard</h3>
                         </div>
                         <ul class="pricing-feature-list">
-                            <li class="pricing-feature">10 Pages/Screens</li>
-                            <li class="pricing-feature">Responsive Design</li>
-                            <li class="pricing-feature">Content Upload</li>
+                          <li class="pricing-feature">Takeoff</li>
+                          <li class="pricing-feature">Bill of quantities</li>
+                          <li class="pricing-feature">Estimating</li>
+                          <li class="pricing-feature">Tenders</li>
+                          <li class="pricing-feature">Materials requirement</li>
+                          <li class="pricing-feature">Bid and Contract</li>
+                          <li class="pricing-feature">Legacy Contract</li>
+                          <li class="pricing-feature">Variation</li>
+                          <li class="pricing-feature">Valuation</li>
+                          <li class="pricing-feature">Single User</li>
                         </ul>
                         <button>Choose plan</button>
                     </div>
                     <div class="pricing-item features-item ja-animate" data-animation="move-from-bottom" data-delay="item-2" style="min-height: 497px;">
-                        <div class="pricing-deco">
-                            <svg class="pricing-deco-img" enable-background="new 0 0 300 100" height="100px" id="Layer_1" preserveAspectRatio="none" version="1.1" viewBox="0 0 300 100" width="300px" x="0px" xml:space="preserve" y="0px">
-                                <path class="deco-layer deco-layer--1" d="M30.913,43.944c0,0,42.911-34.464,87.51-14.191c77.31,35.14,113.304-1.952,146.638-4.729c48.654-4.056,69.94,16.218,69.94,16.218v54.396H30.913V43.944z" fill="#FFFFFF" opacity="0.6"></path>
-                                <path class="deco-layer deco-layer--2" d="M-35.667,44.628c0,0,42.91-34.463,87.51-14.191c77.31,35.141,113.304-1.952,146.639-4.729c48.653-4.055,69.939,16.218,69.939,16.218v54.396H-35.667V44.628z" fill="#FFFFFF" opacity="0.6"></path>
-                                <path class="deco-layer deco-layer--3" d="M43.415,98.342c0,0,48.283-68.927,109.133-68.927c65.886,0,97.983,67.914,97.983,67.914v3.716H42.401L43.415,98.342z" fill="#FFFFFF" opacity="0.7"></path>
-                                <path class="deco-layer deco-layer--4" d="M-34.667,62.998c0,0,56-45.667,120.316-27.839C167.484,57.842,197,41.332,232.286,30.428c53.07-16.399,104.047,36.903,104.047,36.903l1.333,36.667l-372-2.954L-34.667,62.998z" fill="#FFFFFF"></path>
-                            </svg>
-                            <div class="pricing-price"><span class="pricing-currency">$</span>1000
-                                <span class="pricing-period">/ week</span>
-                            </div>
-                            <h3 class="pricing-title">Pro</h3>
-                        </div>
-                        <ul class="pricing-feature-list">
-                            <li class="pricing-feature">5 Pages/Screens</li>
-                            <li class="pricing-feature">Responsive Design</li>
-                            <li class="pricing-feature">Content Upload</li>
-                        </ul>
-                        <button>Choose plan</button>
-                    </div>
-                </div>
-
-                <!-- One Year Pricing Table -->
-                <div class="pricing-oneyear pricing-palden" style="margin-top: 3rem;">
-                  <div class="pricing-item features-item ja-animate" data-animation="move-from-bottom" data-delay="item-0" style="min-height: 497px;">
                       <div class="pricing-deco">
                           <svg class="pricing-deco-img" enable-background="new 0 0 300 100" height="100px" id="Layer_1" preserveAspectRatio="none" version="1.1" viewBox="0 0 300 100" width="300px" x="0px" xml:space="preserve" y="0px">
                               <path class="deco-layer deco-layer--1" d="M30.913,43.944c0,0,42.911-34.464,87.51-14.191c77.31,35.14,113.304-1.952,146.638-4.729c48.654-4.056,69.94,16.218,69.94,16.218v54.396H30.913V43.944z" fill="#FFFFFF" opacity="0.6"></path>
@@ -124,19 +122,57 @@
                               <path class="deco-layer deco-layer--3" d="M43.415,98.342c0,0,48.283-68.927,109.133-68.927c65.886,0,97.983,67.914,97.983,67.914v3.716H42.401L43.415,98.342z" fill="#FFFFFF" opacity="0.7"></path>
                               <path class="deco-layer deco-layer--4" d="M-34.667,62.998c0,0,56-45.667,120.316-27.839C167.484,57.842,197,41.332,232.286,30.428c53.07-16.399,104.047,36.903,104.047,36.903l1.333,36.667l-372-2.954L-34.667,62.998z" fill="#FFFFFF"></path>
                           </svg>
-                          <div class="pricing-price"><span class="pricing-currency">$</span>250
-                              <span class="pricing-period">/ day</span>
+                          <h3 class="pricing-title">Team</h3>
+                          <div class="pricing-price"><span class="pricing-currency">$</span>450
+                              <span class="pricing-period">/ month</span>
                           </div>
-                          <h3 class="pricing-title">Basic</h3>
                       </div>
                       <ul class="pricing-feature-list">
-                          <li class="pricing-feature">1 Pages/Screens</li>
-                          <li class="pricing-feature">Responsive Design</li>
-                          <li class="pricing-feature">Content Upload</li>
+                          <li class="pricing-feature">Takeoff</li>
+                          <li class="pricing-feature">Bill of quantities</li>
+                          <li class="pricing-feature">Estimating</li>
+                          <li class="pricing-feature">Tenders</li>
+                          <li class="pricing-feature">Materials requirement</li>
+                          <li class="pricing-feature">Bid and Contract</li>
+                          <li class="pricing-feature">Legacy Contract</li>
+                          <li class="pricing-feature">Variation</li>
+                          <li class="pricing-feature">Valuation</li>
+                          <li class="pricing-feature">5 Users (2 Expert, 3 Standard)</li>
                       </ul>
                       <button>Choose plan</button>
                   </div>
-                  <div class="pricing-item features-item ja-animate pricing__item--featured" data-animation="move-from-bottom" data-delay="item-1" style="min-height: 497px;">
+                </div>
+
+                <!-- One Year Pricing Table -->
+                <div class="pricing-oneyear dollar-pricing pricing-palden" style="margin-top: 3rem;">
+                  <div class="pricing-item features-item ja-animate" data-animation="move-from-bottom" data-delay="item-1" style="min-height: 497px;">
+                      <div class="pricing-deco">
+                          <svg class="pricing-deco-img" enable-background="new 0 0 300 100" height="100px" id="Layer_1" preserveAspectRatio="none" version="1.1" viewBox="0 0 300 100" width="300px" x="0px" xml:space="preserve" y="0px">
+                              <path class="deco-layer deco-layer--1" d="M30.913,43.944c0,0,42.911-34.464,87.51-14.191c77.31,35.14,113.304-1.952,146.638-4.729c48.654-4.056,69.94,16.218,69.94,16.218v54.396H30.913V43.944z" fill="#FFFFFF" opacity="0.6"></path>
+                              <path class="deco-layer deco-layer--2" d="M-35.667,44.628c0,0,42.91-34.463,87.51-14.191c77.31,35.141,113.304-1.952,146.639-4.729c48.653-4.055,69.939,16.218,69.939,16.218v54.396H-35.667V44.628z" fill="#FFFFFF" opacity="0.6"></path>
+                              <path class="deco-layer deco-layer--3" d="M43.415,98.342c0,0,48.283-68.927,109.133-68.927c65.886,0,97.983,67.914,97.983,67.914v3.716H42.401L43.415,98.342z" fill="#FFFFFF" opacity="0.7"></path>
+                              <path class="deco-layer deco-layer--4" d="M-34.667,62.998c0,0,56-45.667,120.316-27.839C167.484,57.842,197,41.332,232.286,30.428c53.07-16.399,104.047,36.903,104.047,36.903l1.333,36.667l-372-2.954L-34.667,62.998z" fill="#FFFFFF"></path>
+                          </svg>
+                          <h3 class="pricing-title">Standard</h3>
+                          <div class="pricing-price"><span class="pricing-currency">$</span>1,020
+                              <span class="pricing-period">/ year</span>
+                          </div>
+                      </div>
+                      <ul class="pricing-feature-list">
+                          <li class="pricing-feature">Takeoff</li>
+                          <li class="pricing-feature">Bill of quantities</li>
+                          <li class="pricing-feature">Estimating</li>
+                          <li class="pricing-feature">-</li>
+                          <li class="pricing-feature">-</li>
+                          <li class="pricing-feature">-</li>
+                          <li class="pricing-feature">-</li>
+                          <li class="pricing-feature">-</li>
+                          <li class="pricing-feature">-</li>
+                          <li class="pricing-feature">Single User</li>
+                      </ul>
+                      <button>Choose plan</button>
+                  </div>
+                  <div class="pricing-item features-item ja-animate pricing__item--featured" data-animation="move-from-bottom" data-delay="item-2" style="min-height: 497px;">
                       <div class="pricing-deco" style="background: linear-gradient(135deg,#fea03b,#fdda4e)">
                           <svg class="pricing-deco-img" enable-background="new 0 0 300 100" height="100px" id="Layer_1" preserveAspectRatio="none" version="1.1" viewBox="0 0 300 100" width="300px" x="0px" xml:space="preserve" y="0px">
                               <path class="deco-layer deco-layer--1" d="M30.913,43.944c0,0,42.911-34.464,87.51-14.191c77.31,35.14,113.304-1.952,146.638-4.729c48.654-4.056,69.94,16.218,69.94,16.218v54.396H30.913V43.944z" fill="#FFFFFF" opacity="0.6"></path>
@@ -144,15 +180,22 @@
                               <path class="deco-layer deco-layer--3" d="M43.415,98.342c0,0,48.283-68.927,109.133-68.927c65.886,0,97.983,67.914,97.983,67.914v3.716H42.401L43.415,98.342z" fill="#FFFFFF" opacity="0.7"></path>
                               <path class="deco-layer deco-layer--4" d="M-34.667,62.998c0,0,56-45.667,120.316-27.839C167.484,57.842,197,41.332,232.286,30.428c53.07-16.399,104.047,36.903,104.047,36.903l1.333,36.667l-372-2.954L-34.667,62.998z" fill="#FFFFFF"></path>
                           </svg>
-                          <div class="pricing-price"><span class="pricing-currency">$</span>2499
-                              <span class="pricing-period">/ month</span>
+                          <h3 class="pricing-title">Expert</h3>
+                          <div class="pricing-price"><span class="pricing-currency">$</span>2,040
+                              <span class="pricing-period">/ year</span>
                           </div>
-                          <h3 class="pricing-title">Standard</h3>
                       </div>
                       <ul class="pricing-feature-list">
-                          <li class="pricing-feature">10 Pages/Screens</li>
-                          <li class="pricing-feature">Responsive Design</li>
-                          <li class="pricing-feature">Content Upload</li>
+                          <li class="pricing-feature">Takeoff</li>
+                          <li class="pricing-feature">Bill of quantities</li>
+                          <li class="pricing-feature">Estimating</li>
+                          <li class="pricing-feature">Tenders</li>
+                          <li class="pricing-feature">Materials requirement</li>
+                          <li class="pricing-feature">Bid and Contract</li>
+                          <li class="pricing-feature">Legacy Contract</li>
+                          <li class="pricing-feature">Variation</li>
+                          <li class="pricing-feature">Valuation</li>
+                          <li class="pricing-feature">Single User</li>
                       </ul>
                       <button>Choose plan</button>
                   </div>
@@ -164,23 +207,30 @@
                               <path class="deco-layer deco-layer--3" d="M43.415,98.342c0,0,48.283-68.927,109.133-68.927c65.886,0,97.983,67.914,97.983,67.914v3.716H42.401L43.415,98.342z" fill="#FFFFFF" opacity="0.7"></path>
                               <path class="deco-layer deco-layer--4" d="M-34.667,62.998c0,0,56-45.667,120.316-27.839C167.484,57.842,197,41.332,232.286,30.428c53.07-16.399,104.047,36.903,104.047,36.903l1.333,36.667l-372-2.954L-34.667,62.998z" fill="#FFFFFF"></path>
                           </svg>
-                          <div class="pricing-price"><span class="pricing-currency">$</span>700
-                              <span class="pricing-period">/ week</span>
+                          <h3 class="pricing-title">Team</h3>
+                          <div class="pricing-price"><span class="pricing-currency">$</span>4,500
+                              <span class="pricing-period">/ year</span>
                           </div>
-                          <h3 class="pricing-title">Pro</h3>
                       </div>
                       <ul class="pricing-feature-list">
-                          <li class="pricing-feature">5 Pages/Screens</li>
-                          <li class="pricing-feature">Responsive Design</li>
-                          <li class="pricing-feature">Content Upload</li>
+                          <li class="pricing-feature">Takeoff</li>
+                          <li class="pricing-feature">Bill of quantities</li>
+                          <li class="pricing-feature">Estimating</li>
+                          <li class="pricing-feature">Tenders</li>
+                          <li class="pricing-feature">Materials requirement</li>
+                          <li class="pricing-feature">Bid and Contract</li>
+                          <li class="pricing-feature">Legacy Contract</li>
+                          <li class="pricing-feature">Variation</li>
+                          <li class="pricing-feature">Valuation</li>
+                          <li class="pricing-feature">5 Users (2 Expert, 3 Standard)</li>
                       </ul>
                       <button>Choose plan</button>
                   </div>
               </div>
 
               <!-- Two Years Pricing Table -->
-              <div class="pricing-twoyears pricing-palden" style="margin-top: 3rem;">
-                <div class="pricing-item features-item ja-animate" data-animation="move-from-bottom" data-delay="item-0" style="min-height: 497px;">
+              <div class="pricing-twoyears dollar-pricing pricing-palden" style="margin-top: 3rem;">
+                <div class="pricing-item features-item ja-animate" data-animation="move-from-bottom" data-delay="item-1" style="min-height: 497px;">
                     <div class="pricing-deco">
                         <svg class="pricing-deco-img" enable-background="new 0 0 300 100" height="100px" id="Layer_1" preserveAspectRatio="none" version="1.1" viewBox="0 0 300 100" width="300px" x="0px" xml:space="preserve" y="0px">
                             <path class="deco-layer deco-layer--1" d="M30.913,43.944c0,0,42.911-34.464,87.51-14.191c77.31,35.14,113.304-1.952,146.638-4.729c48.654-4.056,69.94,16.218,69.94,16.218v54.396H30.913V43.944z" fill="#FFFFFF" opacity="0.6"></path>
@@ -188,19 +238,26 @@
                             <path class="deco-layer deco-layer--3" d="M43.415,98.342c0,0,48.283-68.927,109.133-68.927c65.886,0,97.983,67.914,97.983,67.914v3.716H42.401L43.415,98.342z" fill="#FFFFFF" opacity="0.7"></path>
                             <path class="deco-layer deco-layer--4" d="M-34.667,62.998c0,0,56-45.667,120.316-27.839C167.484,57.842,197,41.332,232.286,30.428c53.07-16.399,104.047,36.903,104.047,36.903l1.333,36.667l-372-2.954L-34.667,62.998z" fill="#FFFFFF"></path>
                         </svg>
-                        <div class="pricing-price"><span class="pricing-currency">$</span>150
-                            <span class="pricing-period">/ day</span>
+                        <h3 class="pricing-title">Standard</h3>
+                        <div class="pricing-price"><span class="pricing-currency">$</span>1,600
+                            <span class="pricing-period">/ 2 years</span>
                         </div>
-                        <h3 class="pricing-title">Basic</h3>
                     </div>
                     <ul class="pricing-feature-list">
-                        <li class="pricing-feature">1 Pages/Screens</li>
-                        <li class="pricing-feature">Responsive Design</li>
-                        <li class="pricing-feature">Content Upload</li>
+                        <li class="pricing-feature">Takeoff</li>
+                          <li class="pricing-feature">Bill of quantities</li>
+                          <li class="pricing-feature">Estimating</li>
+                          <li class="pricing-feature">-</li>
+                          <li class="pricing-feature">-</li>
+                          <li class="pricing-feature">-</li>
+                          <li class="pricing-feature">-</li>
+                          <li class="pricing-feature">-</li>
+                          <li class="pricing-feature">-</li>
+                          <li class="pricing-feature">Single User</li>
                     </ul>
                     <button>Choose plan</button>
                 </div>
-                <div class="pricing-item features-item ja-animate pricing__item--featured" data-animation="move-from-bottom" data-delay="item-1" style="min-height: 497px;">
+                <div class="pricing-item features-item ja-animate pricing__item--featured" data-animation="move-from-bottom" data-delay="item-2" style="min-height: 497px;">
                     <div class="pricing-deco" style="background: linear-gradient(135deg,#fea03b,#fdda4e)">
                         <svg class="pricing-deco-img" enable-background="new 0 0 300 100" height="100px" id="Layer_1" preserveAspectRatio="none" version="1.1" viewBox="0 0 300 100" width="300px" x="0px" xml:space="preserve" y="0px">
                             <path class="deco-layer deco-layer--1" d="M30.913,43.944c0,0,42.911-34.464,87.51-14.191c77.31,35.14,113.304-1.952,146.638-4.729c48.654-4.056,69.94,16.218,69.94,16.218v54.396H30.913V43.944z" fill="#FFFFFF" opacity="0.6"></path>
@@ -208,15 +265,22 @@
                             <path class="deco-layer deco-layer--3" d="M43.415,98.342c0,0,48.283-68.927,109.133-68.927c65.886,0,97.983,67.914,97.983,67.914v3.716H42.401L43.415,98.342z" fill="#FFFFFF" opacity="0.7"></path>
                             <path class="deco-layer deco-layer--4" d="M-34.667,62.998c0,0,56-45.667,120.316-27.839C167.484,57.842,197,41.332,232.286,30.428c53.07-16.399,104.047,36.903,104.047,36.903l1.333,36.667l-372-2.954L-34.667,62.998z" fill="#FFFFFF"></path>
                         </svg>
-                        <div class="pricing-price"><span class="pricing-currency">$</span>1499
-                            <span class="pricing-period">/ month</span>
+                        <h3 class="pricing-title">Expert</h3>
+                        <div class="pricing-price"><span class="pricing-currency">$</span>3,200
+                            <span class="pricing-period">/ 2 years</span>
                         </div>
-                        <h3 class="pricing-title">Standard</h3>
                     </div>
                     <ul class="pricing-feature-list">
-                        <li class="pricing-feature">10 Pages/Screens</li>
-                        <li class="pricing-feature">Responsive Design</li>
-                        <li class="pricing-feature">Content Upload</li>
+                        <li class="pricing-feature">Takeoff</li>
+                          <li class="pricing-feature">Bill of quantities</li>
+                          <li class="pricing-feature">Estimating</li>
+                          <li class="pricing-feature">Tenders</li>
+                          <li class="pricing-feature">Materials requirement</li>
+                          <li class="pricing-feature">Bid and Contract</li>
+                          <li class="pricing-feature">Legacy Contract</li>
+                          <li class="pricing-feature">Variation</li>
+                          <li class="pricing-feature">Valuation</li>
+                          <li class="pricing-feature">Single User</li>
                     </ul>
                     <button>Choose plan</button>
                 </div>
@@ -228,18 +292,256 @@
                             <path class="deco-layer deco-layer--3" d="M43.415,98.342c0,0,48.283-68.927,109.133-68.927c65.886,0,97.983,67.914,97.983,67.914v3.716H42.401L43.415,98.342z" fill="#FFFFFF" opacity="0.7"></path>
                             <path class="deco-layer deco-layer--4" d="M-34.667,62.998c0,0,56-45.667,120.316-27.839C167.484,57.842,197,41.332,232.286,30.428c53.07-16.399,104.047,36.903,104.047,36.903l1.333,36.667l-372-2.954L-34.667,62.998z" fill="#FFFFFF"></path>
                         </svg>
-                        <div class="pricing-price"><span class="pricing-currency">$</span>500
-                            <span class="pricing-period">/ week</span>
+                        <h3 class="pricing-title">Team</h3>
+                        <div class="pricing-price"><span class="pricing-currency">$</span>8,000
+                            <span class="pricing-period">/ 2 years</span>
                         </div>
-                        <h3 class="pricing-title">Pro</h3>
                     </div>
                     <ul class="pricing-feature-list">
-                        <li class="pricing-feature">5 Pages/Screens</li>
-                        <li class="pricing-feature">Responsive Design</li>
-                        <li class="pricing-feature">Content Upload</li>
+                        <li class="pricing-feature">Takeoff</li>
+                          <li class="pricing-feature">Bill of quantities</li>
+                          <li class="pricing-feature">Estimating</li>
+                          <li class="pricing-feature">Tenders</li>
+                          <li class="pricing-feature">Materials requirement</li>
+                          <li class="pricing-feature">Bid and Contract</li>
+                          <li class="pricing-feature">Legacy Contract</li>
+                          <li class="pricing-feature">Variation</li>
+                          <li class="pricing-feature">Valuation</li>
+                          <li class="pricing-feature">5 Users (2 Expert, 3 Standard)</li>
                     </ul>
                     <button>Choose plan</button>
                 </div>
+            </div>
+            </div>
+
+            <!-- Naira Comparison Table -->
+            <div class="nairacomp">
+              <div class="years-pricing">
+                <p class="naira-monthly-tab" id="monthly" onclick="nairamonthly()">Monthly</p>
+                <p class="naira-oneyear-tab" id="oneyear" onclick="nairaoneyear()">Yearly</p>
+              </div>
+              <div class="pricing naira-pricing naira-monthly pricing-palden" style="margin-top: 3rem;">
+                <div class="pricing-item features-item ja-animate" data-animation="move-from-bottom" data-delay="item-0" style="min-height: 497px;">
+                    <div class="pricing-deco">
+                        <svg class="pricing-deco-img" enable-background="new 0 0 300 100" height="100px" id="Layer_1" preserveAspectRatio="none" version="1.1" viewBox="0 0 300 100" width="300px" x="0px" xml:space="preserve" y="0px">
+                            <path class="deco-layer deco-layer--1" d="M30.913,43.944c0,0,42.911-34.464,87.51-14.191c77.31,35.14,113.304-1.952,146.638-4.729c48.654-4.056,69.94,16.218,69.94,16.218v54.396H30.913V43.944z" fill="#FFFFFF" opacity="0.6"></path>
+                            <path class="deco-layer deco-layer--2" d="M-35.667,44.628c0,0,42.91-34.463,87.51-14.191c77.31,35.141,113.304-1.952,146.639-4.729c48.653-4.055,69.939,16.218,69.939,16.218v54.396H-35.667V44.628z" fill="#FFFFFF" opacity="0.6"></path>
+                            <path class="deco-layer deco-layer--3" d="M43.415,98.342c0,0,48.283-68.927,109.133-68.927c65.886,0,97.983,67.914,97.983,67.914v3.716H42.401L43.415,98.342z" fill="#FFFFFF" opacity="0.7"></path>
+                            <path class="deco-layer deco-layer--4" d="M-34.667,62.998c0,0,56-45.667,120.316-27.839C167.484,57.842,197,41.332,232.286,30.428c53.07-16.399,104.047,36.903,104.047,36.903l1.333,36.667l-372-2.954L-34.667,62.998z" fill="#FFFFFF"></path>
+                        </svg>
+                        <h3 class="pricing-title">Basic</h3>
+                        <div class="pricing-price"><span class="pricing-currency">₦</span>15,000
+                            <!-- <span class="pricing-period">/ month</span> -->
+                        </div>
+                    </div>
+                    <ul class="pricing-feature-list">
+                        <li class="pricing-feature">Takeoff</li>
+                          <li class="pricing-feature">Bill of quantities</li>
+                          <li class="pricing-feature">-</li>
+                          <li class="pricing-feature">-</li>
+                          <li class="pricing-feature">-</li>
+                          <li class="pricing-feature">-</li>
+                          <li class="pricing-feature">-</li>
+                          <li class="pricing-feature">-</li>
+                          <li class="pricing-feature">-</li>
+                          <li class="pricing-feature">Single User</li>
+                    </ul>
+                    <button>Choose plan</button>
+                </div>
+                <div class="pricing-item features-item ja-animate" data-animation="move-from-bottom" data-delay="item-1" style="min-height: 497px;">
+                    <div class="pricing-deco">
+                        <svg class="pricing-deco-img" enable-background="new 0 0 300 100" height="100px" id="Layer_1" preserveAspectRatio="none" version="1.1" viewBox="0 0 300 100" width="300px" x="0px" xml:space="preserve" y="0px">
+                            <path class="deco-layer deco-layer--1" d="M30.913,43.944c0,0,42.911-34.464,87.51-14.191c77.31,35.14,113.304-1.952,146.638-4.729c48.654-4.056,69.94,16.218,69.94,16.218v54.396H30.913V43.944z" fill="#FFFFFF" opacity="0.6"></path>
+                            <path class="deco-layer deco-layer--2" d="M-35.667,44.628c0,0,42.91-34.463,87.51-14.191c77.31,35.141,113.304-1.952,146.639-4.729c48.653-4.055,69.939,16.218,69.939,16.218v54.396H-35.667V44.628z" fill="#FFFFFF" opacity="0.6"></path>
+                            <path class="deco-layer deco-layer--3" d="M43.415,98.342c0,0,48.283-68.927,109.133-68.927c65.886,0,97.983,67.914,97.983,67.914v3.716H42.401L43.415,98.342z" fill="#FFFFFF" opacity="0.7"></path>
+                            <path class="deco-layer deco-layer--4" d="M-34.667,62.998c0,0,56-45.667,120.316-27.839C167.484,57.842,197,41.332,232.286,30.428c53.07-16.399,104.047,36.903,104.047,36.903l1.333,36.667l-372-2.954L-34.667,62.998z" fill="#FFFFFF"></path>
+                        </svg>
+                        <h3 class="pricing-title">Standard</h3>
+                        <div class="pricing-price"><span class="pricing-currency">₦</span>45,000
+                            <!-- <span class="pricing-period">/ month</span> -->
+                        </div>
+                    </div>
+                    <ul class="pricing-feature-list">
+                        <li class="pricing-feature">Takeoff</li>
+                          <li class="pricing-feature">Bill of quantities</li>
+                          <li class="pricing-feature">Estimating</li>
+                          <li class="pricing-feature">-</li>
+                          <li class="pricing-feature">-</li>
+                          <li class="pricing-feature">-</li>
+                          <li class="pricing-feature">-</li>
+                          <li class="pricing-feature">-</li>
+                          <li class="pricing-feature">-</li>
+                          <li class="pricing-feature">Single User</li>
+                    </ul>
+                    <button>Choose plan</button>
+                </div>
+                <div class="pricing-item features-item ja-animate pricing__item--featured" data-animation="move-from-bottom" data-delay="item-2" style="min-height: 497px;">
+                    <div class="pricing-deco" style="background: linear-gradient(135deg,#fea03b,#fdda4e)">
+                        <svg class="pricing-deco-img" enable-background="new 0 0 300 100" height="100px" id="Layer_1" preserveAspectRatio="none" version="1.1" viewBox="0 0 300 100" width="300px" x="0px" xml:space="preserve" y="0px">
+                            <path class="deco-layer deco-layer--1" d="M30.913,43.944c0,0,42.911-34.464,87.51-14.191c77.31,35.14,113.304-1.952,146.638-4.729c48.654-4.056,69.94,16.218,69.94,16.218v54.396H30.913V43.944z" fill="#FFFFFF" opacity="0.6"></path>
+                            <path class="deco-layer deco-layer--2" d="M-35.667,44.628c0,0,42.91-34.463,87.51-14.191c77.31,35.141,113.304-1.952,146.639-4.729c48.653-4.055,69.939,16.218,69.939,16.218v54.396H-35.667V44.628z" fill="#FFFFFF" opacity="0.6"></path>
+                            <path class="deco-layer deco-layer--3" d="M43.415,98.342c0,0,48.283-68.927,109.133-68.927c65.886,0,97.983,67.914,97.983,67.914v3.716H42.401L43.415,98.342z" fill="#FFFFFF" opacity="0.7"></path>
+                            <path class="deco-layer deco-layer--4" d="M-34.667,62.998c0,0,56-45.667,120.316-27.839C167.484,57.842,197,41.332,232.286,30.428c53.07-16.399,104.047,36.903,104.047,36.903l1.333,36.667l-372-2.954L-34.667,62.998z" fill="#FFFFFF"></path>
+                        </svg>
+                        <h3 class="pricing-title">Expert</h3>
+                        <div class="pricing-price"><span class="pricing-currency">₦</span>80,000
+                            <!-- <span class="pricing-period">/ month</span> -->
+                        </div>
+                    </div>
+                    <ul class="pricing-feature-list">
+                        <li class="pricing-feature">Takeoff</li>
+                          <li class="pricing-feature">Bill of quantities</li>
+                          <li class="pricing-feature">Estimating</li>
+                          <li class="pricing-feature">Tenders</li>
+                          <li class="pricing-feature">Materials requirement</li>
+                          <li class="pricing-feature">Bid and Contract</li>
+                          <li class="pricing-feature">Legacy Contract</li>
+                          <li class="pricing-feature">Variation</li>
+                          <li class="pricing-feature">Valuation</li>
+                          <li class="pricing-feature">Single User</li>
+                    </ul>
+                    <button>Choose plan</button>
+                </div>
+                <div class="pricing-item features-item ja-animate" data-animation="move-from-bottom" data-delay="item-2" style="min-height: 497px;">
+                  <div class="pricing-deco">
+                      <svg class="pricing-deco-img" enable-background="new 0 0 300 100" height="100px" id="Layer_1" preserveAspectRatio="none" version="1.1" viewBox="0 0 300 100" width="300px" x="0px" xml:space="preserve" y="0px">
+                          <path class="deco-layer deco-layer--1" d="M30.913,43.944c0,0,42.911-34.464,87.51-14.191c77.31,35.14,113.304-1.952,146.638-4.729c48.654-4.056,69.94,16.218,69.94,16.218v54.396H30.913V43.944z" fill="#FFFFFF" opacity="0.6"></path>
+                          <path class="deco-layer deco-layer--2" d="M-35.667,44.628c0,0,42.91-34.463,87.51-14.191c77.31,35.141,113.304-1.952,146.639-4.729c48.653-4.055,69.939,16.218,69.939,16.218v54.396H-35.667V44.628z" fill="#FFFFFF" opacity="0.6"></path>
+                          <path class="deco-layer deco-layer--3" d="M43.415,98.342c0,0,48.283-68.927,109.133-68.927c65.886,0,97.983,67.914,97.983,67.914v3.716H42.401L43.415,98.342z" fill="#FFFFFF" opacity="0.7"></path>
+                          <path class="deco-layer deco-layer--4" d="M-34.667,62.998c0,0,56-45.667,120.316-27.839C167.484,57.842,197,41.332,232.286,30.428c53.07-16.399,104.047,36.903,104.047,36.903l1.333,36.667l-372-2.954L-34.667,62.998z" fill="#FFFFFF"></path>
+                      </svg>
+                      <h3 class="pricing-title">Team</h3>
+                      <div class="pricing-price"><span class="pricing-currency">₦</span>200,000
+                          <!-- <span class="pricing-period">/ month</span> -->
+                      </div>
+                  </div>
+                  <ul class="pricing-feature-list">
+                      <li class="pricing-feature">Takeoff</li>
+                          <li class="pricing-feature">Bill of quantities</li>
+                          <li class="pricing-feature">Estimating</li>
+                          <li class="pricing-feature">Tenders</li>
+                          <li class="pricing-feature">Materials requirement</li>
+                          <li class="pricing-feature">Bid and Contract</li>
+                          <li class="pricing-feature">Legacy Contract</li>
+                          <li class="pricing-feature">Variation</li>
+                          <li class="pricing-feature">Valuation</li>
+                          <li class="pricing-feature">5 Users (2 Expert, 3 Standard)</li>
+                  </ul>
+                  <button>Choose plan</button>
+              </div>
+            </div>
+
+            <!-- One Year Pricing Table -->
+            <div class="naira-oneyear pricing-oneyear naira-pricing pricing-palden" style="margin-top: 3rem;">
+              <div class="pricing-item features-item ja-animate" data-animation="move-from-bottom" data-delay="item-0" style="min-height: 497px;">
+                  <div class="pricing-deco">
+                      <svg class="pricing-deco-img" enable-background="new 0 0 300 100" height="100px" id="Layer_1" preserveAspectRatio="none" version="1.1" viewBox="0 0 300 100" width="300px" x="0px" xml:space="preserve" y="0px">
+                          <path class="deco-layer deco-layer--1" d="M30.913,43.944c0,0,42.911-34.464,87.51-14.191c77.31,35.14,113.304-1.952,146.638-4.729c48.654-4.056,69.94,16.218,69.94,16.218v54.396H30.913V43.944z" fill="#FFFFFF" opacity="0.6"></path>
+                          <path class="deco-layer deco-layer--2" d="M-35.667,44.628c0,0,42.91-34.463,87.51-14.191c77.31,35.141,113.304-1.952,146.639-4.729c48.653-4.055,69.939,16.218,69.939,16.218v54.396H-35.667V44.628z" fill="#FFFFFF" opacity="0.6"></path>
+                          <path class="deco-layer deco-layer--3" d="M43.415,98.342c0,0,48.283-68.927,109.133-68.927c65.886,0,97.983,67.914,97.983,67.914v3.716H42.401L43.415,98.342z" fill="#FFFFFF" opacity="0.7"></path>
+                          <path class="deco-layer deco-layer--4" d="M-34.667,62.998c0,0,56-45.667,120.316-27.839C167.484,57.842,197,41.332,232.286,30.428c53.07-16.399,104.047,36.903,104.047,36.903l1.333,36.667l-372-2.954L-34.667,62.998z" fill="#FFFFFF"></path>
+                      </svg>
+                      <h3 class="pricing-title">Basic</h3>
+                      <div class="pricing-price"><span class="pricing-currency">₦</span>150,000
+                          <!-- <span class="pricing-period">/ year</span> -->
+                      </div>
+                  </div>
+                  <ul class="pricing-feature-list">
+                      <li class="pricing-feature">Takeoff</li>
+                          <li class="pricing-feature">Bill of quantities</li>
+                          <li class="pricing-feature">-</li>
+                          <li class="pricing-feature">-</li>
+                          <li class="pricing-feature">-</li>
+                          <li class="pricing-feature">-</li>
+                          <li class="pricing-feature">-</li>
+                          <li class="pricing-feature">-</li>
+                          <li class="pricing-feature">-</li>
+                          <li class="pricing-feature">Single User</li>
+                  </ul>
+                  <button>Choose plan</button>
+              </div>
+              <div class="pricing-item features-item ja-animate" data-animation="move-from-bottom" data-delay="item-1" style="min-height: 497px;">
+                  <div class="pricing-deco">
+                      <svg class="pricing-deco-img" enable-background="new 0 0 300 100" height="100px" id="Layer_1" preserveAspectRatio="none" version="1.1" viewBox="0 0 300 100" width="300px" x="0px" xml:space="preserve" y="0px">
+                          <path class="deco-layer deco-layer--1" d="M30.913,43.944c0,0,42.911-34.464,87.51-14.191c77.31,35.14,113.304-1.952,146.638-4.729c48.654-4.056,69.94,16.218,69.94,16.218v54.396H30.913V43.944z" fill="#FFFFFF" opacity="0.6"></path>
+                          <path class="deco-layer deco-layer--2" d="M-35.667,44.628c0,0,42.91-34.463,87.51-14.191c77.31,35.141,113.304-1.952,146.639-4.729c48.653-4.055,69.939,16.218,69.939,16.218v54.396H-35.667V44.628z" fill="#FFFFFF" opacity="0.6"></path>
+                          <path class="deco-layer deco-layer--3" d="M43.415,98.342c0,0,48.283-68.927,109.133-68.927c65.886,0,97.983,67.914,97.983,67.914v3.716H42.401L43.415,98.342z" fill="#FFFFFF" opacity="0.7"></path>
+                          <path class="deco-layer deco-layer--4" d="M-34.667,62.998c0,0,56-45.667,120.316-27.839C167.484,57.842,197,41.332,232.286,30.428c53.07-16.399,104.047,36.903,104.047,36.903l1.333,36.667l-372-2.954L-34.667,62.998z" fill="#FFFFFF"></path>
+                      </svg>
+                      <h3 class="pricing-title">Standard</h3>
+                      <div class="pricing-price"><span class="pricing-currency">₦</span>450,000
+                          <!-- <span class="pricing-period">/ year</span> -->
+                      </div>
+                  </div>
+                  <ul class="pricing-feature-list">
+                      <li class="pricing-feature">Takeoff</li>
+                          <li class="pricing-feature">Bill of quantities</li>
+                          <li class="pricing-feature">Estimating</li>
+                          <li class="pricing-feature">-</li>
+                          <li class="pricing-feature">-</li>
+                          <li class="pricing-feature">-</li>
+                          <li class="pricing-feature">-</li>
+                          <li class="pricing-feature">-</li>
+                          <li class="pricing-feature">-</li>
+                          <li class="pricing-feature">Single User</li>
+                  </ul>
+                  <button>Choose plan</button>
+              </div>
+              <div class="pricing-item features-item ja-animate pricing__item--featured" data-animation="move-from-bottom" data-delay="item-2" style="min-height: 497px;">
+                  <div class="pricing-deco" style="background: linear-gradient(135deg,#fea03b,#fdda4e)">
+                      <svg class="pricing-deco-img" enable-background="new 0 0 300 100" height="100px" id="Layer_1" preserveAspectRatio="none" version="1.1" viewBox="0 0 300 100" width="300px" x="0px" xml:space="preserve" y="0px">
+                          <path class="deco-layer deco-layer--1" d="M30.913,43.944c0,0,42.911-34.464,87.51-14.191c77.31,35.14,113.304-1.952,146.638-4.729c48.654-4.056,69.94,16.218,69.94,16.218v54.396H30.913V43.944z" fill="#FFFFFF" opacity="0.6"></path>
+                          <path class="deco-layer deco-layer--2" d="M-35.667,44.628c0,0,42.91-34.463,87.51-14.191c77.31,35.141,113.304-1.952,146.639-4.729c48.653-4.055,69.939,16.218,69.939,16.218v54.396H-35.667V44.628z" fill="#FFFFFF" opacity="0.6"></path>
+                          <path class="deco-layer deco-layer--3" d="M43.415,98.342c0,0,48.283-68.927,109.133-68.927c65.886,0,97.983,67.914,97.983,67.914v3.716H42.401L43.415,98.342z" fill="#FFFFFF" opacity="0.7"></path>
+                          <path class="deco-layer deco-layer--4" d="M-34.667,62.998c0,0,56-45.667,120.316-27.839C167.484,57.842,197,41.332,232.286,30.428c53.07-16.399,104.047,36.903,104.047,36.903l1.333,36.667l-372-2.954L-34.667,62.998z" fill="#FFFFFF"></path>
+                      </svg>
+                      <h3 class="pricing-title">Expert</h3>
+                      <div class="pricing-price"><span class="pricing-currency">₦</span>900,000
+                          <!-- <span class="pricing-period">/ year</span> -->
+                      </div>
+                  </div>
+                  <ul class="pricing-feature-list">
+                      <li class="pricing-feature">Takeoff</li>
+                          <li class="pricing-feature">Bill of quantities</li>
+                          <li class="pricing-feature">Estimating</li>
+                          <li class="pricing-feature">Tenders</li>
+                          <li class="pricing-feature">Materials requirement</li>
+                          <li class="pricing-feature">Bid and Contract</li>
+                          <li class="pricing-feature">Legacy Contract</li>
+                          <li class="pricing-feature">Variation</li>
+                          <li class="pricing-feature">Valuation</li>
+                          <li class="pricing-feature">Single User</li>
+                  </ul>
+                  <button>Choose plan</button>
+              </div>
+              <div class="pricing-item features-item ja-animate" data-animation="move-from-bottom" data-delay="item-2" style="min-height: 497px;">
+                  <div class="pricing-deco">
+                      <svg class="pricing-deco-img" enable-background="new 0 0 300 100" height="100px" id="Layer_1" preserveAspectRatio="none" version="1.1" viewBox="0 0 300 100" width="300px" x="0px" xml:space="preserve" y="0px">
+                          <path class="deco-layer deco-layer--1" d="M30.913,43.944c0,0,42.911-34.464,87.51-14.191c77.31,35.14,113.304-1.952,146.638-4.729c48.654-4.056,69.94,16.218,69.94,16.218v54.396H30.913V43.944z" fill="#FFFFFF" opacity="0.6"></path>
+                          <path class="deco-layer deco-layer--2" d="M-35.667,44.628c0,0,42.91-34.463,87.51-14.191c77.31,35.141,113.304-1.952,146.639-4.729c48.653-4.055,69.939,16.218,69.939,16.218v54.396H-35.667V44.628z" fill="#FFFFFF" opacity="0.6"></path>
+                          <path class="deco-layer deco-layer--3" d="M43.415,98.342c0,0,48.283-68.927,109.133-68.927c65.886,0,97.983,67.914,97.983,67.914v3.716H42.401L43.415,98.342z" fill="#FFFFFF" opacity="0.7"></path>
+                          <path class="deco-layer deco-layer--4" d="M-34.667,62.998c0,0,56-45.667,120.316-27.839C167.484,57.842,197,41.332,232.286,30.428c53.07-16.399,104.047,36.903,104.047,36.903l1.333,36.667l-372-2.954L-34.667,62.998z" fill="#FFFFFF"></path>
+                      </svg>
+                      <h3 class="pricing-title">Team</h3>
+                      <div class="pricing-price"><span class="pricing-currency">₦</span>2,000,000
+                          <!-- <span class="pricing-period">/ year</span> -->
+                      </div>
+                  </div>
+                  <ul class="pricing-feature-list">
+                      <li class="pricing-feature">Takeoff</li>
+                          <li class="pricing-feature">Bill of quantities</li>
+                          <li class="pricing-feature">Estimating</li>
+                          <li class="pricing-feature">Tenders</li>
+                          <li class="pricing-feature">Materials requirement</li>
+                          <li class="pricing-feature">Bid and Contract</li>
+                          <li class="pricing-feature">Legacy Contract</li>
+                          <li class="pricing-feature">Variation</li>
+                          <li class="pricing-feature">Valuation</li>
+                          <li class="pricing-feature">5 Users (2 Expert, 3 Standard)</li>
+                  </ul>
+                  <button>Choose plan</button>
+              </div>
+          </div>
             </div>
             </section>
         </div>
@@ -248,21 +550,19 @@
         </div>
         </div>
 
-        <section id="comparison_table">
+        <section id="comparison_table_dollar">
+          <div id="comparison_table">
         <div class="container">
 
             <ul>
-              <li class="bg-purple">
-                <button>BASIC</button>
-              </li>
-              <li class="bg-blue">
+              <li class="bg-mintgreen">
                 <button>STANDARD</button>
               </li>
-              <li class="bg-blue active">
-                <button>PRO</button>
+              <li class="bg-orange active">
+                <button>EXPERT</button>
               </li>
-              <li class="bg-blue">
-                <button>COMBO</button>
+              <li class="bg-mintgreen">
+                <button>TEAM</button>
               </li>
             </ul>  
             
@@ -270,37 +570,45 @@
               <thead>
                 <tr>
                   <th class="hide"></th>
-                  <th class="bg-purple">BASIC</th>
-                  <th class="bg-blue">STANDARD</th>
-                  <th class="bg-blue default">PRO</th>
-                  <th class="bg-blue">COMBO</th>
+                  <th class="bg-mintgreen">STANDARD</th>
+                  <th class="bg-orange default">EXPERT</th>
+                  <th class="bg-mintgreen">TEAM</th>
                 </tr>
               </thead>
               <tbody>
-                <tr>
-                  <td>Per Annum</td>
-                  <td><span class="txt-top">$</span><span class="txt-l">120</span></td>
-                  <td><span class="txt-top">$</span><span class="txt-l">300</span></td>
-                  <td class="default"><span class="txt-top">$</span><span class="txt-l">1200</span></td>
-                  <td><span class="txt-top">$</span><span class="txt-l">1600</span></td>
+                <tr class="monthly-dollar-table2">
+                  <td>Monthly</td>
+                  <td><span class="txt-top">$</span><span class="txt-l">100</span></td>
+                  <td class="default"><span class="txt-top">$</span><span class="txt-l">200</span></td>
+                  <td><span class="txt-top">$</span><span class="txt-l">450</span></td>
+                </tr>
+                <tr class="yearly-dollar-table2">
+                  <td>Yearly</td>
+                  <td><span class="txt-top">$</span><span class="txt-l">1,020</span></td>
+                  <td class="default"><span class="txt-top">$</span><span class="txt-l">2,040</span></td>
+                  <td><span class="txt-top">$</span><span class="txt-l">4,500</span></td>
+                </tr>
+                <tr class="twoyears-dollar-table2">
+                  <td>2 years</td>
+                  <td><span class="txt-top">$</span><span class="txt-l">1,600</span></td>
+                  <td class="default"><span class="txt-top">$</span><span class="txt-l">3,200</span></td>
+                  <td><span class="txt-top">$</span><span class="txt-l">8,000</span></td>
                 </tr>
                 <tr>
-                  <td colspan="5" class="sep">Get started easily</td>
+                  <td colspan="4" class="sep">Getting started</td>
                 </tr>
                 <tr>
                   <td>Number of Users</td>
-                  <td><span class="tick">Single User</span></td>
                   <td><span class="tick">Single User</span></td>
                   <td class="default"><span class="tick">Single User</span></td>
                   <td><span class="tick">5 Users</span></td>
                 </tr>
                
                 <tr>
-                  <td colspan="5" class="sep">Products</td>
+                  <td colspan="4" class="sep">Products</td>
                 </tr>
                 <tr>
                   <td>Takeoff</td>
-                  <td><span class="tick">&#10004;</span></td>
                   <td><span class="tick">&#10004;</span></td>
                   <td class="default"><span class="tick">&#10004;</span></td>
                   <td><span class="tick">&#10004;</span></td>
@@ -308,13 +616,11 @@
                 <tr>
                   <td>Billing</td>
                   <td><span class="tick">&#10004;</span></td>
-                  <td><span class="tick">&#10004;</span></td>
                   <td class="default"><span class="tick">&#10004;</span></td>
                   <td><span class="tick">&#10004;</span></td>
                 </tr>
                 <tr>
-                  <td>Costing</td>
-                  <td></td>
+                  <td>Estimating</td>
                   <td><span class="tick">&#10004;</span></td>
                   <td class="default"><span class="tick">&#10004;</span></td>
                   <td><span class="tick">&#10004;</span></td>
@@ -322,36 +628,159 @@
                 <tr>
                     <td>Materials</td>
                     <td></td>
-                    <td><span class="tick">&#10004;</span></td>
                     <td class="default"><span class="tick">&#10004;</span></td>
                     <td><span class="tick">&#10004;</span></td>
                   </tr>
                   <tr>
                     <td>Legacy</td>
                     <td></td>
-                    <td><span class="tick">&#10004;</span></td>
                     <td class="default"><span class="tick">&#10004;</span></td>
                     <td><span class="tick">&#10004;</span></td>
                   </tr>
                   <tr>
                     <td>Tender</td>
                     <td></td>
+                    <td class="default"><span class="tick">&#10004;</span></td>
                     <td><span class="tick">&#10004;</span></td>
+                  </tr>
+                  <tr>
+                    <td>Variation</td>
+                    <td></td>
                     <td class="default"><span class="tick">&#10004;</span></td>
                     <td><span class="tick">&#10004;</span></td>
                   </tr>
                   <tr>
                     <td>Valuation</td>
                     <td></td>
-                    <td><span class="tick">&#10004;</span></td>
                     <td class="default"><span class="tick">&#10004;</span></td>
                     <td><span class="tick">&#10004;</span></td>
                   </tr>
               </tbody>
             </table>
+          </div>
             </div>
         </section>
 
+        <section id="comparison_table_naira">
+          <div id="comparison_table">
+          <div class="container">
+  
+              <ul>
+                <li class="bg-mintgreen">
+                  <button>BASIC</button>
+                </li>
+                <li class="bg-mintgreen">
+                  <button>STANDARD</button>
+                </li>
+                <li class="bg-orange active">
+                  <button>EXPERT</button>
+                </li>
+                <li class="bg-mintgreen">
+                  <button>TEAM</button>
+                </li>
+              </ul>  
+              
+              <table>
+                <thead>
+                  <tr>
+                    <th class="hide"></th>
+                    <th class="bg-mintgreen">BASIC</th>
+                    <th class="bg-mintgreen">STANDARD</th>
+                    <th class="bg-orange default">EXPERT</th>
+                    <th class="bg-mintgreen">TEAM</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr class="monthly-naira-table2">
+                    <td>Monthly</td>
+                    <td><span class="txt-top">₦</span><span class="txt-l">15,000</span></td>
+                    <td><span class="txt-top">₦</span><span class="txt-l">45,000</span></td>
+                    <td class="default"><span class="txt-top">₦</span><span class="txt-l">80,000</span></td>
+                    <td><span class="txt-top">₦</span><span class="txt-l">200,000</span></td>
+                  </tr>
+                  <tr class="yearly-naira-table2">
+                    <td>Yearly</td>
+                    <td><span class="txt-top">₦</span><span class="txt-l">150,000</span></td>
+                    <td><span class="txt-top">₦</span><span class="txt-l">450,000</span></td>
+                    <td class="default"><span class="txt-top">₦</span><span class="txt-l">900,000</span></td>
+                    <td><span class="txt-top">₦</span><span class="txt-l">2,000,000</span></td>
+                  </tr>
+                  <tr>
+                    <td colspan="5" class="sep">Getting started</td>
+                  </tr>
+                  <tr>
+                    <td>Number of Users</td>
+                    <td><span class="tick">Single User</span></td>
+                    <td><span class="tick">Single User</span></td>
+                    <td class="default"><span class="tick">Single User</span></td>
+                    <td><span class="tick">5 Users</span></td>
+                  </tr>
+                 
+                  <tr>
+                    <td colspan="5" class="sep">Products</td>
+                  </tr>
+                  <tr>
+                    <td>Takeoff</td>
+                    <td><span class="tick">&#10004;</span></td>
+                    <td><span class="tick">&#10004;</span></td>
+                    <td class="default"><span class="tick">&#10004;</span></td>
+                    <td><span class="tick">&#10004;</span></td>
+                  </tr>
+                  <tr>
+                    <td>Billing</td>
+                    <td></td>
+                    <td><span class="tick">&#10004;</span></td>
+                    <td class="default"><span class="tick">&#10004;</span></td>
+                    <td><span class="tick">&#10004;</span></td>
+                  </tr>
+                  <tr>
+                    <td>Estimating</td>
+                    <td></td>
+                    <td><span class="tick">&#10004;</span></td>
+                    <td class="default"><span class="tick">&#10004;</span></td>
+                    <td><span class="tick">&#10004;</span></td>
+                  </tr>
+                  <tr>
+                      <td>Materials</td>
+                      <td></td>
+                      <td><span class="tick">&#10004;</span></td>
+                      <td class="default"><span class="tick">&#10004;</span></td>
+                      <td><span class="tick">&#10004;</span></td>
+                    </tr>
+                    <tr>
+                      <td>Legacy</td>
+                      <td></td>
+                      <td><span class="tick">&#10004;</span></td>
+                      <td class="default"><span class="tick">&#10004;</span></td>
+                      <td><span class="tick">&#10004;</span></td>
+                    </tr>
+                    <tr>
+                      <td>Tender</td>
+                      <td></td>
+                      <td><span class="tick">&#10004;</span></td>
+                      <td class="default"><span class="tick">&#10004;</span></td>
+                      <td><span class="tick">&#10004;</span></td>
+                    </tr>
+                    <tr>
+                      <td>Variation</td>
+                      <td></td>
+                      <td><span class="tick">&#10004;</span></td>
+                      <td class="default"><span class="tick">&#10004;</span></td>
+                      <td><span class="tick">&#10004;</span></td>
+                    </tr>
+                    <tr>
+                      <td>Valuation</td>
+                      <td></td>
+                      <td><span class="tick">&#10004;</span></td>
+                      <td class="default"><span class="tick">&#10004;</span></td>
+                      <td><span class="tick">&#10004;</span></td>
+                    </tr>
+                </tbody>
+              </table>
+              </div>
+            </div>
+          </section>
+  
 
         <footer class=site-footer id=footer-contact>
           <div class=container>
@@ -374,7 +803,7 @@
               <div class="col-xs-3 col-md-3">
                 <h6>Useful Links</h6>
                 <div class="mb-2">
-                  <a href="#"><li>Pricing</li></a>
+                  <a href="pricing.html"><li>Pricing</li></a>
                   <a href="products.html"><li>Products</li></a>
                   <a href="partners.html"><li>Partners</li></a>
                   <a href="learning.html"><li>Learning</li></a>
@@ -385,8 +814,11 @@
           <h6>Publications</h6>
           <div class="mb-2">
             <a href="#"><li>Announcements</li></a>
-            <a href="#"><li>News</li></a>
-            <a href="#"><li>Facebook</li></a>
+            <!-- <a href="#"><li>News</li></a> -->
+            <a href="https://www.facebook.com/Rapisurv"><li>Facebook</li></a>
+            <a href="https://twitter.com/rapisurv"><li>Twitter</li></a>
+            <a href="https://www.instagram.com/rapisurv/"><li>Instagram</li></a>
+            <a href="https://www.youtube.com/channel/UCWIGqepQGZPHmiWNDC3tZSw"><li>YouTube</li></a>
            
           </div>
           </div>
@@ -419,7 +851,11 @@
           <p class=copyright-text>Copyright &copy; 2022 All Rights Reserved by
           <a href=#>Rapisurv</a>.
           </p>
-          <a href=""><p>Privacy Policy</p></a>
+          <div class="disclaimer">
+          <a href="https://app.termly.io/document/disclaimer/d7d7815f-c82c-4717-99c2-43badfdab98b"><p>Disclaimer</p></a>  
+          <p>•</p>
+          <a href="https://app.termly.io/document/privacy-policy/d3e4c78f-64e1-4df9-8121-49c7a15672dc"><p>Privacy Policy</p></a>
+        </div>
           </div>
           </div>
           </div>
