@@ -1,3 +1,22 @@
+$(function() {
+  $('select').change(function() {
+    if ($(this).val() == 1) {
+      document.querySelector(".dollarcomp").style.display = "none"; 
+      document.querySelector(".nairacomp").style.display = "block"; 
+      document.querySelector("#comparison_table_naira").style.display = "block"; 
+      document.querySelector("#comparison_table_dollar").style.display = "none"; 
+      $('.sep').attr('colspan',5);
+    }
+    else if ($(this).val() == 2) {
+      document.querySelector(".dollarcomp").style.display = "block"; 
+      document.querySelector(".nairacomp").style.display = "none"; 
+      document.querySelector("#comparison_table_naira").style.display = "none";
+      document.querySelector("#comparison_table_dollar").style.display = "block";  
+      $('.sep').attr('colspan',4);
+    }
+    })
+  })
+
 const navSlide = () => {
   const burger = document.querySelector('.burger');
   const nav = document.querySelector('.nav-links');
@@ -81,14 +100,14 @@ window.addEventListener('load',function(){
 $( "ul" ).on( "click", "li", function() {
   var pos = $(this).index()+2;
   $("tr").find('td:not(:eq(0))').hide();
-  $('td:nth-child('+pos+')').css('display','table-cell');
+  $('td:nth-child('+pos+')').css('display','table-row');
   $("tr").find('th:not(:eq(0))').hide();
   $('li').removeClass('active');
   $(this).addClass('active');
 });
 
 // Initialize the media query
-  var mediaQuery = window.matchMedia('(min-width: 640px)');
+  var mediaQuery = window.matchMedia('(min-width: 1200px)');
   
   // Add a listen event
   mediaQuery.addListener(doSomething);
@@ -96,7 +115,7 @@ $( "ul" ).on( "click", "li", function() {
   // Function to do something with the media query
   function doSomething(mediaQuery) {    
     if (mediaQuery.matches) {
-      $('.sep').attr('colspan',5);
+      $('.sep').attr('colspan',4);
     } else {
       $('.sep').attr('colspan',2);
     }
@@ -229,23 +248,65 @@ new Glider(document.querySelector(".glider"), {
     document.querySelector(".twoyears").style.color = "#ffffff";
   }
   
-  function monthly() {
+  // Dollar Monthly, Yearly & Bi-Annual tabs logic
+  function dollarmonthly() {
     changeColor('#10b981');
     document.querySelector(".pricing").style.display = "flex";
     document.querySelector(".pricing-oneyear").style.display = "none";
     document.querySelector(".pricing-twoyears").style.display = "none";
+    document.querySelector(".monthly-dollar-table2").style.display = "table-row";
+    document.querySelector(".yearly-dollar-table2").style.display = "none";
+    document.querySelector(".twoyears-dollar-table2").style.display = "none";
   }
   
-  function oneyear() {
+  function dollaroneyear() {
     changeColor2('#10b981');
     document.querySelector(".pricing").style.display = "none";
     document.querySelector(".pricing-oneyear").style.display = "flex";
     document.querySelector(".pricing-twoyears").style.display = "none";
+    document.querySelector(".monthly-dollar-table2").style.display = "none";
+    document.querySelector(".yearly-dollar-table2").style.display = "table-row";
+    document.querySelector(".twoyears-dollar-table2").style.display = "none";
   }
   
-  function twoyears() {
+  function dollartwoyears() {
     changeColor3('#10b981');
     document.querySelector(".pricing").style.display = "none";
     document.querySelector(".pricing-oneyear").style.display = "none";
     document.querySelector(".pricing-twoyears").style.display = "flex";
+    document.querySelector(".monthly-dollar-table2").style.display = "none";
+    document.querySelector(".yearly-dollar-table2").style.display = "none";
+    document.querySelector(".twoyears-dollar-table2").style.display = "table-row";
   }
+  
+  // Naira Monthly & Yearly tabs logic
+
+  function changeColorNaira(color) {
+    document.querySelector(".naira-monthly-tab").style.background = color;
+    document.querySelector(".naira-oneyear-tab").style.background = "#ffffff";
+    document.querySelector(".naira-monthly-tab").style.color = "#ffffff";
+    document.querySelector(".naira-oneyear-tab").style.color = "#000000";
+  }
+  function changeColorNaira2(color2) {
+    document.querySelector(".naira-monthly-tab").style.background = "#ffffff";
+    document.querySelector(".naira-oneyear-tab").style.background = color2;
+    document.querySelector(".naira-monthly-tab").style.color = "#000000";
+    document.querySelector(".naira-oneyear-tab").style.color = "#ffffff";
+  }
+  
+  function nairamonthly() {
+    changeColorNaira('#10b981');
+    document.querySelector(".naira-monthly").style.display = "flex";
+    document.querySelector(".naira-oneyear").style.display = "none";
+    document.querySelector(".monthly-naira-table2").style.display = "table-row";
+    document.querySelector(".yearly-naira-table2").style.display = "none";
+  }
+  
+  function nairaoneyear() {
+    changeColorNaira2('#10b981');
+    document.querySelector(".naira-monthly").style.display = "none";
+    document.querySelector(".naira-oneyear").style.display = "flex";
+    document.querySelector(".monthly-naira-table2").style.display = "none";
+    document.querySelector(".yearly-naira-table2").style.display = "table-row";
+  }
+
