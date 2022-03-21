@@ -744,12 +744,9 @@ footer ion-icon {
   margin-top: 0.5rem;
 }
 
-@media (max-width: 400px) {
-  .details-img {
-    max-width: 500px;
-    margin-left: -12rem;
-  }
-}
+/* @media (max-width: 400px) {
+
+} */
 
 @media (max-width: 858px) {
   .details-img {
@@ -760,6 +757,11 @@ footer ion-icon {
 @media (max-width: 500px) {
   .logo img {
     width: 7rem;
+  }
+
+  .details-img {
+    max-width: 500px;
+    margin-left: -5rem;
   }
 
   .play-bg {
