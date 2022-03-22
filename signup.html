@@ -1,0 +1,260 @@
+<!doctype html>
+<html lang=en>
+<head>
+<meta charset=UTF-8>
+<meta name=viewport content="width=device-width,initial-scale=1,shrink-to-fit=no">
+<meta http-equiv=X-UA-Compatible content="ie=edge">
+<title>Sign Up | Rapisurv</title>
+<link rel=stylesheet href=style.css>
+<link rel=stylesheet href=https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/css/bootstrap.min.css>
+<script src=https://code.jquery.com/jquery-3.4.1.slim.min.js></script>
+<script src=https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/js/bootstrap.min.js></script>
+<script src=https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js></script>
+ <!-- icons -->
+ <script src="https://unpkg.com/ionicons@5.4.0/dist/ionicons.js"></script>
+<link rel=icon type=image/png sizes=64x64 href=assets/images/favicon2.png>
+</head>
+<body>
+    <nav class="nav">
+      <a href="index.html">
+        <div class="logo">
+          <img src="assets/images/logo.png" alt="">
+        </div>
+      </a>
+        <ul class="nav-links">
+          <li><a href="index.html">Home</a></li>
+          <li><a href="products.html">Products</a></li>
+          <li><a href="pricing.html">Pricing</a></li>
+          <li><a href="contact.html">Contact</a></li>
+          <li><a href="#">Log In</a></li>
+          <li><a href="#"><button>Sign Up</button></a></li>
+        </ul>
+        <div class="burger">
+          <div class="line1"></div>
+          <div class="line2"></div>
+          <div class="line3"></div>
+        </div>
+      </nav>
+    <section id="signup">
+<div class="content">
+  <div class="content__inner">
+    <div class="container">
+    </div>
+    <div class="container overflow-hidden">
+      <!--multisteps-form-->
+      <div class="multisteps-form">
+        <!--progress bar-->
+        <div class="row">
+          <div class="col-12 col-lg-8 ml-auto mr-auto mb-4">
+            <div class="multisteps-form__progress">
+              <button class="multisteps-form__progress-btn js-active" type="button" title="User Info">User Info</button>
+              <button class="multisteps-form__progress-btn" type="button" title="Address">Address</button>
+              <button class="multisteps-form__progress-btn" type="button" title="Order Info">Order Info</button>
+              <button class="multisteps-form__progress-btn" type="button" title="Comments">Comments        </button>
+            </div>
+          </div>
+        </div>
+        <!--form panels-->
+        <div class="row">
+          <div class="col-12 col-lg-8 m-auto">
+            <form class="multisteps-form__form">
+              <!--single form panel-->
+              <div class="multisteps-form__panel shadow p-4 rounded bg-white js-active" data-animation="slideVert">
+                <h3 class="multisteps-form__title">Your User Info</h3>
+                <div class="multisteps-form__content">
+                  <div class="form-row mt-4">
+                    <div class="col-12 col-sm-6">
+                      <input class="multisteps-form__input form-control" type="text" placeholder="First Name"/>
+                    </div>
+                    <div class="col-12 col-sm-6 mt-4 mt-sm-0">
+                      <input class="multisteps-form__input form-control" type="text" placeholder="Last Name"/>
+                    </div>
+                  </div>
+                  <div class="form-row mt-4">
+                    <div class="col-12 col-sm-6">
+                      <input class="multisteps-form__input form-control" type="text" placeholder="Login"/>
+                    </div>
+                    <div class="col-12 col-sm-6 mt-4 mt-sm-0">
+                      <input class="multisteps-form__input form-control" type="email" placeholder="Email"/>
+                    </div>
+                  </div>
+                  <div class="form-row mt-4">
+                    <div class="col-12 col-sm-6">
+                      <input class="multisteps-form__input form-control" type="password" placeholder="Password"/>
+                    </div>
+                    <div class="col-12 col-sm-6 mt-4 mt-sm-0">
+                      <input class="multisteps-form__input form-control" type="password" placeholder="Repeat Password"/>
+                    </div>
+                  </div>
+                  <div class="button-row d-flex mt-4">
+                    <button class="btn btn-primary ml-auto js-btn-next" type="button" title="Next">Next</button>
+                  </div>
+                </div>
+              </div>
+              <!--single form panel-->
+              <div class="multisteps-form__panel shadow p-4 rounded bg-white" data-animation="slideVert">
+                <h3 class="multisteps-form__title">Your Address</h3>
+                <div class="multisteps-form__content">
+                  <div class="form-row mt-4">
+                    <div class="col">
+                      <input class="multisteps-form__input form-control" type="text" placeholder="Address 1"/>
+                    </div>
+                  </div>
+                  <div class="form-row mt-4">
+                    <div class="col">
+                      <input class="multisteps-form__input form-control" type="text" placeholder="Address 2"/>
+                    </div>
+                  </div>
+                  <div class="form-row mt-4">
+                    <div class="col-12 col-sm-6">
+                      <input class="multisteps-form__input form-control" type="text" placeholder="City"/>
+                    </div>
+                    <div class="col-6 col-sm-3 mt-4 mt-sm-0">
+                      <select class="multisteps-form__select form-control">
+                        <option selected="selected">State...</option>
+                        <option>...</option>
+                      </select>
+                    </div>
+                    <div class="col-6 col-sm-3 mt-4 mt-sm-0">
+                      <input class="multisteps-form__input form-control" type="text" placeholder="Zip"/>
+                    </div>
+                  </div>
+                  <div class="button-row d-flex mt-4">
+                    <button class="btn btn-primary js-btn-prev" type="button" title="Prev">Prev</button>
+                    <button class="btn btn-primary ml-auto js-btn-next" type="button" title="Next">Next</button>
+                  </div>
+                </div>
+              </div>
+              <!--single form panel-->
+              <div class="multisteps-form__panel shadow p-4 rounded bg-white" data-animation="slideVert">
+                <h3 class="multisteps-form__title">Your Order Info</h3>
+                <div class="multisteps-form__content">
+                  <div class="row">
+                    <div class="col-12 col-md-6 mt-4">
+                      <div class="card shadow-sm">
+                        <div class="card-body">
+                          <h5 class="card-title">Item Title</h5>
+                          <p class="card-text">Small and nice item description</p><a class="btn btn-primary" href="#" title="Item Link">Item Link</a>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="col-12 col-md-6 mt-4">
+                      <div class="card shadow-sm">
+                        <div class="card-body">
+                          <h5 class="card-title">Item Title</h5>
+                          <p class="card-text">Small and nice item description</p><a class="btn btn-primary" href="#" title="Item Link">Item Link</a>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="row">
+                    <div class="button-row d-flex mt-4 col-12">
+                      <button class="btn btn-primary js-btn-prev" type="button" title="Prev">Prev</button>
+                      <button class="btn btn-primary ml-auto js-btn-next" type="button" title="Next">Next</button>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <!--single form panel-->
+              <div class="multisteps-form__panel shadow p-4 rounded bg-white" data-animation="slideVert">
+                <h3 class="multisteps-form__title">Additional Comments</h3>
+                <div class="multisteps-form__content">
+                  <div class="form-row mt-4">
+                    <textarea class="multisteps-form__textarea form-control" placeholder="Additional Comments and Requirements"></textarea>
+                  </div>
+                  <div class="button-row d-flex mt-4">
+                    <button class="btn btn-primary js-btn-prev" type="button" title="Prev">Prev</button>
+                    <button class="btn btn-success ml-auto" type="button" title="Send">Send</button>
+                  </div>
+                </div>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    </section>
+
+
+    <footer class=site-footer id=footer-contact>
+      <div class=container>
+      <div class=row>
+        <div class="col-xs-3 col-md-3">
+          <h6>Find Us</h6>
+          <div class="mb-2">
+        <li>Isekit Limited, <br>
+          Adewunmi Abudu Street, <br>
+            Ajao Estate, Osolo way, <br>
+            Lagos, Nigeria <br><br>
+          info@rapisurv.com
+          </li>
+               
+           
+          </div>
+          </div>
+
+          <div class="col-xs-3 col-md-3">
+            <h6>Useful Links</h6>
+            <div class="mb-2">
+              <a href="pricing.html"><li>Pricing</li></a>
+              <a href="products.html"><li>Products</li></a>
+              <a href="partners.html"><li>Partners</li></a>
+              <a href="learning.html"><li>Learning</li></a>
+             
+            </div>
+            </div>
+      <div class="col-xs-3 col-md-3">
+      <h6>Publications</h6>
+      <div class="mb-2">
+        <a href="https://medium.com/@rapisurv"><li>Announcements</li></a>
+        <!-- <a href="#"><li>News</li></a> -->
+        <a href="https://www.facebook.com/Rapisurv"><li>Facebook</li></a>
+        <a href="https://twitter.com/rapisurv"><li>Twitter</li></a>
+        <a href="https://www.instagram.com/rapisurv/"><li>Instagram</li></a>
+        <a href="https://www.youtube.com/channel/UCWIGqepQGZPHmiWNDC3tZSw"><li>YouTube</li></a>
+       
+      </div>
+      </div>
+
+      <div class="col-xs-3 col-md-3">
+        <h6>Support</h6>
+        <div class="mb-2">
+          <a href="https://rapisurv.freshdesk.com/a/solutions/categories/72000215583/folders/72000313002?view=all"><li>Getting Started</li></a>
+          <a href="https://rapisurv.freshdesk.com/a/solutions/articles/72000512521"><li>User Guide</li></a>
+          <a href="https://rapisurv.freshdesk.com/a/solutions/articles/72000514344"><li>FAQs</li></a>
+       
+         
+        </div>
+        </div>
+      <!-- <div class="col-xs-6 col-md-3">
+      <h6>CONNECT</h6>
+        <ul class=social-icons>
+          <li><a class=facebook href=#><ion-icon name="logo-facebook"></ion-icon></a></li>
+          <li><a class=twitter href="#"><ion-icon name="logo-twitter"></ion-icon></a></li>
+          <li><a class=instagram href="#"><ion-icon name="logo-instagram"></ion-icon></a></li>
+          <li><a class=instagram href="#"><ion-icon name="logo-linkedin"></ion-icon></a></li>
+          </ul>
+      </div> -->
+      </div>
+      <hr>
+      </div>
+      <div class=container>
+      <div class=row>
+      <div class="col-md-12 below-footer">
+      <p class=copyright-text>Copyright &copy; 2022 All Rights Reserved by
+        <a href="https://isekit.com">IseKit Limited</a>.
+      </p>
+      <div class="disclaimer">
+      <a href="https://app.termly.io/document/disclaimer/d7d7815f-c82c-4717-99c2-43badfdab98b"><p>Disclaimer</p></a>  
+      <p>•</p>
+      <a href="https://app.termly.io/document/privacy-policy/d3e4c78f-64e1-4df9-8121-49c7a15672dc"><p>Privacy Policy</p></a>
+    </div>
+      </div>
+      </div>
+      </div>
+      </footer>
+        <script src="js/script.js"></script>
+        </body>
+        </html>
