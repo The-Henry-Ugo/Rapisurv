@@ -17,6 +17,51 @@ $(function() {
     })
   })
 
+  const url = new URL(
+    "https://qa.rapisurv.com/api/create"
+);
+
+let headers = {
+    "Content-Type": "application/json",
+    "Accept": "application/json",
+};
+
+let body = {
+  "finm": "",
+  "lamn": "",
+  "phnb": "",
+  "orgn": "",
+  "unmn": "",
+  "email": "",
+  "password": "",
+  "terms": true,
+  "address": {
+      "adds": "",
+      "city": "",
+      "stat": "",
+      "poco": "",
+      "cotr": "",
+      "cotn": ""
+  },
+  "zone": 13,
+  "security": [
+      {
+          "seas": "",
+          "sequ": ""
+      },
+      {
+          "seas": "",
+          "sequ": ""
+      }
+  ]
+};
+
+fetch(url, {
+  method: "POST",
+  headers,
+  body: JSON.stringify(body),
+}).then(response => response.json());
+
 const navSlide = () => {
   const burger = document.querySelector('.burger');
   const nav = document.querySelector('.nav-links');
