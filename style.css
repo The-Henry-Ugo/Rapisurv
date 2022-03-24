@@ -231,6 +231,26 @@ nav ion-icon {
   margin-top: 2rem;
 }
 
+.simple {
+  position: relative;
+  display: inline-block;
+}
+
+.simple svg {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+}
+
+.simple path {
+  stroke: #e47d1c;
+  stroke-width: 8px;
+  stroke-dasharray: 1500 1500;
+}
+
 button {
   text-align: center;
   background: #10b981;
