@@ -1804,6 +1804,10 @@ hr {
   width: auto;
 }
 
+#signup button:hover {
+  border: 1px #000 solid;
+}
+
 .clearfix:after {
   content: "";
   display: block;
@@ -1839,13 +1843,13 @@ hr {
 }
 
 .company {
-  background: #10b98127;
-  color: #10b981;
+  background: #EAEAEA;
+  color: #8F8F8F;
 }
 
 .individual {
-  background: #EAEAEA;
-  color: #8F8F8F;
+  background: #10b98127;
+  color: #10b981;
 }
 
 .company span,
@@ -1859,8 +1863,54 @@ hr {
   padding-top: .8rem;
 }
 
-.individual-form {
+.company-form {
   display: none;
+}
+
+.error-message {
+  color: red;
+  margin-bottom: 20px;
+  font-size: 12px;
+  display: block;
+  position: absolute;
+  z-index: 100000;
+}
+
+.prev-next {
+  display: flex;
+}
+
+#prevBtn {
+  background: #e0e0e0;
+  color: #646464;
+  margin-right: 20px;
+}
+
+/* Hide all steps by default: */
+.fieldTab {
+  display: none;
+}
+
+/* Make circles that indicate the steps of the form: */
+.step {
+  height: 15px;
+  width: 15px;
+  margin: 0 2px;
+  background-color: #bbbbbb;
+  border: none;
+  border-radius: 50%;
+  display: inline-block;
+  opacity: 0.5;
+}
+
+/* Mark the active step: */
+.step.activate {
+  opacity: 1;
+}
+
+/* Mark the steps that are finished and valid: */
+.step.finish {
+  background-color: #04AA6D;
 }
 
 .form_wrapper {
@@ -2223,6 +2273,10 @@ hr {
   #hero h1 {
     font-size: 1.5rem;
     max-width: 300px;
+  }
+
+  .prev-next {
+    flex-direction: column;
   }
   .years-pricing {
     flex-direction: column;
