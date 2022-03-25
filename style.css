@@ -1434,7 +1434,7 @@ td button {
   border: 0;
   outline: 0;
   font-family: "Inter";
-  width: 17em;
+  max-width: 20em;
   height: 3em;
   padding: 0 20px;
   border-radius: 0.25em;
@@ -1473,6 +1473,8 @@ select::-ms-expand {
   margin: 1rem 0 0 0;
   border-radius: .5rem;
   border: 1px solid #cecece;
+  padding-left: 20px;
+  position: relative;
 }
 
 .section-header {
@@ -1516,6 +1518,7 @@ textarea {
   width: 600px !important;
   margin-top: 1rem;
   border-radius: .5rem !important;
+  padding-left: 20px;
   color: #000;
 }
 
@@ -1822,8 +1825,13 @@ hr {
   justify-content: space-evenly;
 }
 
-.company,
-.individual {
+.user-type input[type="radio"] {
+  opacity: 0;
+  position: fixed;
+  width: 0;
+}
+
+.user-type label {
   display: flex;
   align-items: center;
   justify-content: space-evenly;
@@ -1834,37 +1842,23 @@ hr {
   padding: 10px;
   cursor: pointer;
   transition: .5s;
+  background: #EAEAEA;
+  color: #8F8F8F;
+  font-size: 1.1rem !important;
 }
 
-.company:hover,
-.individual:hover {
+.user-type label:hover {
   background: #fff;
   border: #2f2f2f 1px solid;
 }
 
-.company {
-  background: #EAEAEA;
-  color: #8F8F8F;
+.user-type input[type="radio"]:focus + label {
+  border: 2px dashed #444;
 }
 
-.individual {
+.user-type input[type="radio"]:checked + label {
   background: #10b98127;
   color: #10b981;
-}
-
-.company span,
-.individual span {
-  font-size: 1.8rem;
-}
-
-.company p,
-.individual p {
-  font-size: 1rem;
-  padding-top: .8rem;
-}
-
-.company-form {
-  display: none;
 }
 
 .error-message {
@@ -2361,5 +2355,18 @@ hr {
   #contact select {
     width: 200px !important;
     margin: 0 auto;
+  }
+}
+
+@media screen and (max-width: 280px) {
+  #hero h1 {
+    font-size: 1.2rem;
+    max-width: 250px;
+  }
+}
+
+@media screen and (max-width: 420px) {
+  #comparison_table {
+    display: none;
   }
 }

@@ -1,4 +1,60 @@
-//First name validation
+$(function() {
+  $('select').change(function() {
+    if ($(this).val() == 1) {
+      document.querySelector(".dollarcomp").style.display = "none"; 
+      document.querySelector(".nairacomp").style.display = "block"; 
+      document.querySelector("#comparison_table_naira").style.display = "block"; 
+      document.querySelector("#comparison_table_dollar").style.display = "none"; 
+      $('.sep').attr('colspan',5);
+    }
+    else if ($(this).val() == 2) {
+      document.querySelector(".dollarcomp").style.display = "block"; 
+      document.querySelector(".nairacomp").style.display = "none"; 
+      document.querySelector("#comparison_table_naira").style.display = "none";
+      document.querySelector("#comparison_table_dollar").style.display = "block";  
+      $('.sep').attr('colspan',4);
+    }
+    })
+ 
+ 
+  })
+
+  const navSlide = () => {
+    const burger = document.querySelector('.burger');
+    const nav = document.querySelector('.nav-links');
+    const navLinks = document.querySelectorAll('.nav-links li');
+    
+    //Toggle Nav
+    burger.addEventListener('click', ()=>{
+      nav.classList.toggle('nav-active');
+      
+      //Animate Links
+      navLinks.forEach((link, index)=>{
+        if(link.style.animation){
+          link.style.animation = ''
+        }else{
+              link.style.animation = `navLinkFade 0.5s ease forwards ${index / 7 + 0.5}s`;
+  
+        }
+      });
+      
+      //burger animation
+      burger.classList.toggle('toggle');
+      
+      
+    });
+    
+    
+    
+    
+  }
+  
+  navSlide();
+
+
+$(document).ready(function(){
+
+  //First name validation
 document.querySelector('#finm').addEventListener('blur',(event)=>{
   let err = document.querySelector(".error-message");
   err.innerText = "";
@@ -142,7 +198,6 @@ document.querySelector('#confirm-password').addEventListener('blur',function(eve
   }
 });
 
-$(document).ready(function(){
   $('.play-bg').on('click', function(){
     $('.video-popup').fadeIn('slow');
     var srchref='https://www.youtube.com/embed/bZzEZZVlfXA?autoplay=0';
@@ -163,131 +218,9 @@ $(document).ready(function(){
   
 });
 
-var currentTab = 0; // Current tab is set to be the first tab (0)
-showTab(currentTab); // Display the current tab
-
-function showTab(n) {
-  // This function will display the specified tab of the form ...
-  var x = document.getElementsByClassName("fieldTab");
-  x[n].style.display = "block";
-  // ... and fix the Previous/Next buttons:
-  if (n == 0) {
-    document.getElementById("prevBtn").style.display = "none";
-  } else {
-    document.getElementById("prevBtn").style.display = "inline-flex";
-  }
-  if (n == (x.length - 1)) {
-    document.getElementById("nextBtn").innerHTML = "Create Account";
-  } else {
-    document.getElementById("nextBtn").innerHTML = "Next";
-  }
-  // ... and run a function that displays the correct step indicator:
-  fixStepIndicator(n)
-}
-
-function nextPrev(n) {
-  // This function will figure out which tab to display
-  var x = document.getElementsByClassName("fieldTab");
-  // Exit the function if any field in the current tab is invalid:
-  if (n == 1 && !validateForm()) return false;
-  // Hide the current tab:
-  x[currentTab].style.display = "none";
-  // Increase or decrease the current tab by 1:
-  currentTab = currentTab + n;
-  // if you have reached the end of the form... :
-  if (currentTab >= x.length) {
-    //...the form gets submitted:
-    return false;
-  }
-  // Otherwise, display the correct tab:
-  showTab(currentTab);
-}
-
-function validateForm() {
-  // This function deals with validation of the form fields
-  var x, y, i, valid = true;
-  x = document.getElementsByClassName("fieldTab");
-  y = x[currentTab].getElementsByTagName("input");
-  // A loop that checks every input field in the current tab:
-  for (i = 0; i < y.length; i++) {
-    // If a field is empty...
-    if (y[i].value == "") {
-      // add an "invalid" class to the field:
-      y[i].className += " invalid";
-      // and set the current valid status to false:
-      valid = false;
-    }
-  }
-  // If the valid status is true, mark the step as finished and valid:
-  if (valid) {
-    document.getElementsByClassName("step")[currentTab].className += " finish";
-  }
-  return valid; // return the valid status
-}
-
-function fixStepIndicator(n) {
-  // This function removes the "active" class of all steps...
-  var i, x = document.getElementsByClassName("step");
-  for (i = 0; i < x.length; i++) {
-    x[i].className = x[i].className.replace(" activate", "");
-  }
-  //... and adds the "active" class to the current step:
-  x[n].className += " activate";
-}
- 
- 
-$(function() {
-  $('select').change(function() {
-    if ($(this).val() == 1) {
-      document.querySelector(".dollarcomp").style.display = "none"; 
-      document.querySelector(".nairacomp").style.display = "block"; 
-      document.querySelector("#comparison_table_naira").style.display = "block"; 
-      document.querySelector("#comparison_table_dollar").style.display = "none"; 
-      $('.sep').attr('colspan',5);
-    }
-    else if ($(this).val() == 2) {
-      document.querySelector(".dollarcomp").style.display = "block"; 
-      document.querySelector(".nairacomp").style.display = "none"; 
-      document.querySelector("#comparison_table_naira").style.display = "none";
-      document.querySelector("#comparison_table_dollar").style.display = "block";  
-      $('.sep').attr('colspan',4);
-    }
-    })
-  })
 
 
 
-const navSlide = () => {
-  const burger = document.querySelector('.burger');
-  const nav = document.querySelector('.nav-links');
-  const navLinks = document.querySelectorAll('.nav-links li');
-  
-  //Toggle Nav
-  burger.addEventListener('click', ()=>{
-    nav.classList.toggle('nav-active');
-    
-    //Animate Links
-    navLinks.forEach((link, index)=>{
-      if(link.style.animation){
-        link.style.animation = ''
-      }else{
-            link.style.animation = `navLinkFade 0.5s ease forwards ${index / 7 + 0.5}s`;
-
-      }
-    });
-    
-    //burger animation
-    burger.classList.toggle('toggle');
-    
-    
-  });
-  
-  
-  
-  
-}
-
-navSlide();
 
     // Timeline Scroll Section
 // --------------------------------------------------------------
@@ -441,22 +374,25 @@ $( "ul" ).on( "click", "li", function() {
 //     ]
 //   });
 
+$('#radioCompany').click(function(){
+  document.querySelector(".fieldTab").style.display = "block";
+  $("#orgn").attr('required', true);
 
+  $("#addr").attr('required', true);
 
-  const company=()=>{
-    document.querySelector(".individual-form").style.display = "none";
-    document.querySelector(".company-form").style.display = "block";
-    document.querySelector(".company").style.background = "#10b98127";
-    document.querySelector(".company").style.color = "#10b981";
-    document.querySelector(".individual").style.background = "#EAEAEA";
-    document.querySelector(".individual").style.color = "#8F8F8F";
-  }
+  $("#city").attr('required', true);
 
-  const individual=()=>{
-    document.querySelector(".individual-form").style.display = "block";
-    document.querySelector(".company-form").style.display = "none";
-    document.querySelector(".individual").style.background = "#10b98127";
-    document.querySelector(".individual").style.color = "#10b981";
-    document.querySelector(".company").style.background = "#EAEAEA";
-    document.querySelector(".company").style.color = "#8F8F8F";
-  }
+  $("#postalcode").attr('required', true);
+});
+
+$('#radioIndividual').click(function(){
+  document.querySelector(".fieldTab").style.display = "none";
+  $("#orgn").removeAttr('required');
+
+  $("#addr").removeAttr('required');
+
+  $("#city").removeAttr('required');
+
+  $("#postalcode").removeAttr('required');
+});
+

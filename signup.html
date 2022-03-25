@@ -47,24 +47,22 @@
               <h2>Create an Account</h2>
               <p>Already have an account? <b>Log In</b></p>
             </div>
-            <div class="user-type">
-              <div class="individual" onclick="individual()">
-                <span>
-                <ion-icon name="person-circle"></ion-icon>
-              </span>
-                <p>Individual</p>
-              </div>
-              <p>or</p>
-                <div class="company" onclick="company()">
-                  <span>
-                  <ion-icon name="briefcase"></ion-icon>
-                </span>
-                  <p>Company</p>
-                </div>   
-            </div>
-
                    <!-- Individual Form -->
                    <div class="individual-form">
+                    <div class="user-type">
+                      <input type="radio" name="radioType" id="radioIndividual" value="individual" class="individual" checked>
+                      <label for="radioIndividual"> 
+                        <ion-icon name="person-circle"></ion-icon>
+                        Individual
+                      </label>
+               
+                      <p>or</p>
+                        <input type="radio" name="radioType" id="radioCompany" value="company" class="company">
+                        <label for="radioCompany">       
+                          <ion-icon name="briefcase"></ion-icon>
+                          Company
+                        </label>
+                    </div>
                     <div class="row clearfix">
                       <div class="">
                         <form>
@@ -114,140 +112,53 @@
                           </div>
                         </div>
                       </div>
-                          <div class="input_field select_option">
-                            <select>
-                              <option>Preferred Standard Method of Measurement</option>
-                              <option>Canada</option>
-                              <option>Nigeria</option>
-                              <option>Uganda</option>
-                              <option>United States of America</option>
-                            </select>
-                            <div class="select_arrow"></div>
-                          </div>
-                             
+                          <!-- Hidden for Individual -->
+                          <div class="fieldTab">
+                            <div class="input_field">
+                              <input type="text" name="orgn" id="orgn" placeholder="Organization" />
+                            </div>
+          
+                            <div class="input_field">
+                              <input type="text" name="addr" id="addr" placeholder="Address" />
+                            </div>
+          
+                            <div class="row clearfix">
+                              <div class="col_half">
+                                <div class="input_field">
+                                  <input type="text" name="city" id="city" placeholder="City" />
+                                  <p class="error-message"></p>
+                                </div>
+                              </div>
+                              <div class="col_half">
+                                <div class="input_field">
+                                  <input type="text" name="postalcode" id="postalcode" placeholder="Postal Code" />
+                                  <p class="error-message"></p>
+                                </div>
+                              </div>
+                            </div>
+                            </div>
+                            <div class="input_field select_option">
+                              <select>
+                                <option>Preferred Standard Method of Measurement</option>
+                                <option>Nigeria</option>
+                                <option>Uganda</option>
+                                <option>United States of America</option>
+                              </select>
+                              <div class="select_arrow"></div>
+                            </div>
                             <div class="input_field checkbox_option">
-                              <input type="checkbox" id="cb2">
-                          <label for="cb2">By creating an account, you agree with Rapisurv's Terms and Conditions</label>
+                              <input type="checkbox" id="cb1">
+                          <label for="cb1">By creating an account, you agree with Rapisurv's Terms and Conditions</label>
                             </div>
                           <button type="submit">Create Account</button>
                         </form>
                       </div>
                     </div>
                     </div>
-            <!-- Company form -->
-            <div class="company-form">
-            <div class="row clearfix">
-              <div class="">
-                <form>
-                  <div class="fieldTab">
-                  <div class="row clearfix">
-                    <div class="col_half">
-                      <div class="input_field">
-                        <input type="text" name="finm" id="finm" pattern="^([a-zA-Z]{2,} ?)+$" placeholder="First Name" required />
-                        <p class="error-message"></p>
-                      </div>
-                    </div>
-                    <div class="col_half">
-                      <div class="input_field">
-                        <input type="text" name="lamn" id="lamn" pattern="^([a-zA-Z]{2,} ?)+$" placeholder="Last Name" required />
-                        <p class="error-message"></p>
-                      </div>
-                    </div>
-                  </div>
-                  <div class="input_field">
-                    <input type="text" name="unmn" placeholder="Username" required />
-                    <p class="error-message"></p>
-                  </div>
-                  <div class="input_field select_option">
-                    <select>
-                      <option selected disabled>Select a country</option>
-                      <option value="Afghanistan">Afghanistan</option>
-                      <option value="Åland Islands">Åland Islands</option>
-                    </select>
-                    <div class="select_arrow"></div>
-                    <p class="error-message"></p>
-                  </div>
-                 
-                  <div class="input_field">
-                    <input type="email" name="email" id="email" placeholder="Email" required />
-                    <p class="error-message"></p>
-                  </div>
-                  <div class="row clearfix">
-                  <div class="col_half">
-                  <div class="input_field">
-                    <input type="password" name="password" id="password" placeholder="Password" required />
-                    <p class="error-message"></p>
-                  </div>
-                </div>
-                <div class="col_half">
-                  <div class="input_field">
-                    <input type="password" name="password" id="confirm-password" placeholder="Re-type Password" required />
-                    <p class="error-message"></p>
-                  </div>
-                </div>
-              </div>
-              </div>
-
-              <div class="fieldTab">
-                  <div class="input_field">
-                    <input type="text" name="orgn" placeholder="Organization" required />
-                  </div>
-
-                  <div class="input_field">
-                    <input type="text" name="orgn" placeholder="Address" required />
-                  </div>
-
-                  <div class="row clearfix">
-                    <div class="col_half">
-                      <div class="input_field">
-                        <input type="text" name="city" id="city" placeholder="City" required />
-                        <p class="error-message"></p>
-                      </div>
-                    </div>
-                    <div class="col_half">
-                      <div class="input_field">
-                        <input type="text" name="postalcode" id="postalcode" placeholder="Postal Code" required />
-                        <p class="error-message"></p>
-                      </div>
-                    </div>
-                  </div>
-
-                  <div class="input_field select_option">
-                    <select>
-                      <option>Preferred Standard Method of Measurement</option>
-                      <option>Option 1</option>
-                      <option>Option 2</option>
-                    </select>
-                    <div class="select_arrow"></div>
-                  </div>
-                     
-                    <div class="input_field checkbox_option">
-                      <input type="checkbox" id="cb1">
-                  <label for="cb1">By creating an account, you agree with Rapisurv's Terms and Conditions</label>
-                    </div>
-                  </div>
-
-                  <div style="overflow:auto">
-                    <div class="prev-next">
-                      <button type="button" id="prevBtn" onclick="nextPrev(-1)">Previous</button>
-                      <button type="button" id="nextBtn" onclick="nextPrev(1)">Next</button>
-                    </div>
-                  </div>
-                  
-                  <!-- Circles which indicates the steps of the form: -->
-                  <div style="text-align:center;margin-top:40px;">
-                    <span class="step"></span>
-                    <span class="step"></span>
-                  </div>
-                  
-                  <!-- <button type="submit">Create Account</button> -->
                 </form>
               </div>
             </div>
             </div>
-          </div>
-        </div>
-      </div>
     </section>
 
 
