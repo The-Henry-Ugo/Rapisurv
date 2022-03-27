@@ -1477,6 +1477,11 @@ select::-ms-expand {
   position: relative;
 }
 
+.terms-of-service {
+  color: #e47d1c;
+  font-weight: 600;
+}
+
 .section-header {
   text-align: center;
   padding: 5em 0 0 0;
