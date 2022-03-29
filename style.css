@@ -78,6 +78,25 @@ a {
   font-size: 1.2rem !important;
 }
 
+.beta-nav {
+  width: 200px !important;
+}
+
+.beta-nav span {
+  position: absolute;
+  top: -25px;
+  right: -17px;
+  background: #10b98127;
+  color: #10996b;
+  padding: 5px;
+  width: 45px !important;
+  height: 25px;
+  border-radius: 5px;
+  font-size: 0.8rem;
+  font-weight: bold;
+  z-index: 100000;
+}
+
 .current-nav {
   font-weight: 600 !important;
   color: #10b981 !important;
