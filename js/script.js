@@ -51,6 +51,24 @@ $(function() {
   
   navSlide();
 
+  $('.play-bg').on('click', function(){
+    $('.video-popup').fadeIn('slow');
+    var srchref='https://www.youtube.com/embed/bZzEZZVlfXA?autoplay=0';
+    $("#iframe").attr('src', srchref);
+    return false;
+  });
+  
+  $('.popup-bg').on('click', function(){
+    $('.video-popup').slideUp('slow');
+    return false;
+  });
+  
+   $('.close-btn').on('click', function(){
+     $('.video-popup').fadeOut('slow');
+     $("#iframe").attr('src', '');
+      return false;
+   });
+
 
 $(document).ready(function(){
 
@@ -197,29 +215,8 @@ document.querySelector('#confirm-password').addEventListener('blur',function(eve
       error.innerText = messg;
   }
 });
-
-  $('.play-bg').on('click', function(){
-    $('.video-popup').fadeIn('slow');
-    var srchref='https://www.youtube.com/embed/bZzEZZVlfXA?autoplay=0';
-    $("#iframe").attr('src', srchref);
-    return false;
-  });
-  
-  $('.popup-bg').on('click', function(){
-    $('.video-popup').slideUp('slow');
-    return false;
-  });
-  
-   $('.close-btn').on('click', function(){
-     $('.video-popup').fadeOut('slow');
-     $("#iframe").attr('src', '');
-      return false;
-   });
   
 });
-
-
-
 
 
     // Timeline Scroll Section
