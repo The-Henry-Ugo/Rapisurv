@@ -162,13 +162,14 @@ nav ion-icon {
     overflow-x: hidden;
   }
   .nav-links {
-    z-index: 101;
+    z-index: 1000;
     position: absolute;
+    padding-top: 4rem;
     right: 0px;
-    height: 90vh;
+    height: 100vh;
     top: 10vh;
-    background: rgba(255, 255, 255, 0.85);
-    backdrop-filter: blur(10px);
+    background: rgba(82, 82, 82, 0.925);
+    backdrop-filter: blur(30px);
     color: #fff;
     display: flex;
     flex-direction: column;
@@ -183,6 +184,10 @@ nav ion-icon {
   .nav-links li {
     opacity: 0;
     height: 100px !important;
+  }
+
+  .nav-links li a {
+    color: #fff;
   }
   .burger {
     display: block;
@@ -257,7 +262,7 @@ nav ion-icon {
 
 .simple::before {
   content: "";
-  background: #e47d1ca4;
+  background: #e47d1c8f;
   width: 100%;
   height: 20px;
   position: absolute;
@@ -934,7 +939,7 @@ footer ion-icon {
 /* PRICING PAGE */
 
 .section {
-  margin: 200px 0 0 0 !important;
+  margin: 200px 0 -80px 0 !important;
   min-height: 100%;
   position: relative;
   -webkit-font-smoothing: antialiased;
@@ -1060,6 +1065,10 @@ footer ion-icon {
   color: #fff;
 }
 
+.invinsible {
+  visibility: hidden;
+}
+
 .pricing-palden .deco-layer {
   -webkit-transition: -webkit-transform 0.5s;
   transition: transform 0.5s;
@@ -1176,6 +1185,42 @@ footer ion-icon {
   padding: 0;
 }
 
+.enterprise-content {
+  margin: 0 auto;
+  max-width: 1000px;
+  background: #435a53;
+  border-radius: 2rem;
+  padding: 50px 0 !important;
+  position: relative;
+  overflow: hidden;
+  z-index: 3;
+}
+
+.enterprise-content img {
+  position: absolute;
+  z-index: -1;
+  opacity: .1;
+  max-width: 800px;
+}
+
+.enterprise-content {
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+}
+
+.ent-text h3 {
+  font-weight: bold;
+  font-size: 2.3rem;
+  color: #fff;
+}
+
+.ent-text p {
+  color: #fff;
+  max-width: 400px;
+  margin-top: 1.5rem;
+}
+
 .flex {
   /*Flexbox for containers*/
   justify-content: center;
@@ -1186,7 +1231,7 @@ footer ion-icon {
 /* COMPARISON TABLE */
 
 #comparison_table {
-  margin: 12em 0 3rem 0;
+  margin: 5em 0 3rem 0;
 }
 
 #comparison_table ul {
@@ -1362,6 +1407,47 @@ td button {
 .products-about-p p {
   max-width: 55rem;
   margin: 0 auto 5rem auto;
+}
+
+.service-section .icon-box {
+	margin-bottom: 20px;
+	padding: 30px;
+	border-radius: 6px;
+	background-color: #f8f9fa;
+}
+.service-section .icon-box:hover .service-title a {
+	color: #10b981;
+}
+.service-section .icon-box img {
+	width: 40px;
+  float: left;
+}
+.service-section .icon-box .service-title {
+	margin-left: 70px;
+	font-weight: 700;
+	margin-bottom: 15px;
+	font-size: 18px;
+	line-height: 1.2;
+}
+.service-section .icon-box .service-title a {
+	color: #556270;
+	transition: 0.3s;
+	text-decoration: none;
+}
+.service-section .icon-box .service-para {
+	margin-left: 70px;
+	line-height: 24px;
+	font-size: 16px;
+  line-height: 30px;
+
+}
+.service-section .service-main-heading {
+	color: #556270;
+	padding-top: 4rem;
+	margin: 20px 0;
+	line-height: 1;
+	font-size: 2.5rem;
+	font-weight: 600;
 }
 
 .below-footer {
@@ -1696,6 +1782,15 @@ hr {
   margin-left: 20px;
 }
 
+.custom {
+  font-size: 3rem !important;
+}
+
+.quote {
+  font-size: 1rem;
+  color: #fff;
+}
+
 .biannual-wrap,
 .yearly-wrap,
 .naira-yearly-wrap,
@@ -1807,7 +1902,14 @@ hr {
 }
 
 .sign-bg {
-  background: url(assets/images/adeolu-eletu-unRkg2jH1j0-unsplash\ \(1\).jpg);
+  background: url(assets/images/city.jpeg);
+  background-position: center;
+  width: 100%;
+  position: relative;
+}
+
+.reg-bg {
+  background: url(assets/images/learn.jpeg);
   background-position: center;
   width: 100%;
   position: relative;
@@ -2205,6 +2307,12 @@ hr {
     max-width: 400px;
   }
 
+  .enterprise-content {
+    flex-direction: column;
+    text-align: center;
+    padding: 0 30px;
+  }
+
   .sign-bg {
     display: none;
   }
@@ -2391,5 +2499,15 @@ hr {
 @media screen and (max-width: 420px) {
   #comparison_table {
     display: none;
+  }
+
+  .enterprise-content {
+    padding: 0 50px;
+    border-radius: 1rem;
+    margin-bottom: 30px;
+  }
+
+  .ent-text h3 {
+    font-size: 1.5rem;
   }
 }
