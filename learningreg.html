@@ -49,7 +49,20 @@
             </div>
                    <!-- Individual Form -->
                    <div class="individual-form">
-                   
+                    <div class="user-type">
+                      <input type="radio" name="radioType" id="radioIndividual" value="individual" class="individual" checked>
+                      <label for="radioIndividual"> 
+                        <ion-icon name="person-circle"></ion-icon>
+                        Individual
+                      </label>
+               
+                      <p>or</p>
+                        <input type="radio" name="radioType" id="radioCompany" value="company" class="company">
+                        <label for="radioCompany">       
+                          <ion-icon name="briefcase"></ion-icon>
+                          Team
+                        </label>
+                    </div>
                     <div class="row clearfix">
                       <div class="">
                         <form>
@@ -120,7 +133,7 @@
                                 </div>
                               </div>
                             </div>
-                         
+
                             <div class="input_field select_option">
                               <select>
                                 <option>Preferred Standard Method of Measurement</option>
@@ -129,6 +142,71 @@
                                 <option>United States of America</option>
                               </select>
                               <div class="select_arrow"></div>
+                            </div>
+
+                            <div class="fieldTab">
+                              <p class="team-member">Team Member 1</p>
+                              <div class="row clearfix">
+                                <div class="col_half">
+                                  <div class="input_field">
+                                    <input type="text" name="finm" id="finm" pattern="^([a-zA-Z]{2,} ?)+$" placeholder="First Name" required />
+                                    
+                                  </div>
+                                </div>
+                                <div class="col_half">
+                                  <div class="input_field">
+                                    <input type="text" name="lamn" id="lamn" pattern="^([a-zA-Z]{2,} ?)+$" placeholder="Last Name" required />
+                                    
+                                  </div>
+                                </div>
+                              </div>
+
+                              <div class="input_field">
+                                <input type="email" name="email" id="email" placeholder="Email" required />
+                                
+                              </div>
+
+                              <p class="team-member">Team Member 2</p>
+                              <div class="row clearfix">
+                                <div class="col_half">
+                                  <div class="input_field">
+                                    <input type="text" name="finm" id="finm" pattern="^([a-zA-Z]{2,} ?)+$" placeholder="First Name" required />
+                                    
+                                  </div>
+                                </div>
+                                <div class="col_half">
+                                  <div class="input_field">
+                                    <input type="text" name="lamn" id="lamn" pattern="^([a-zA-Z]{2,} ?)+$" placeholder="Last Name" required />
+                                    
+                                  </div>
+                                </div>
+                              </div>
+
+                              <div class="input_field">
+                                <input type="email" name="email" id="email" placeholder="Email" required />
+                                
+                              </div>
+
+                              <p class="team-member">Team Member 3</p>
+                              <div class="row clearfix">
+                                <div class="col_half">
+                                  <div class="input_field">
+                                    <input type="text" name="finm" id="finm" pattern="^([a-zA-Z]{2,} ?)+$" placeholder="First Name" required />
+                                    
+                                  </div>
+                                </div>
+                                <div class="col_half">
+                                  <div class="input_field">
+                                    <input type="text" name="lamn" id="lamn" pattern="^([a-zA-Z]{2,} ?)+$" placeholder="Last Name" required />
+                                    
+                                  </div>
+                                </div>
+                              </div>
+
+                              <div class="input_field">
+                                <input type="email" name="email" id="email" placeholder="Email" required />
+                                
+                              </div>
                             </div>
                           <button type="submit">Register</button>
                         </form>

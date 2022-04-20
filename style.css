@@ -1902,8 +1902,11 @@ hr {
 }
 
 .sign-bg {
-  background: url(assets/images/city.jpeg);
-  background-position: center;
+  background: url(assets/images/sign.jpeg);
+  /* background-position: center; */
+  background-position-y: -650px;
+  background-repeat: no-repeat;
+  background-size: cover;
   width: 100%;
   position: relative;
 }
@@ -1911,8 +1914,14 @@ hr {
 .reg-bg {
   background: url(assets/images/learn.jpeg);
   background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
   width: 100%;
   position: relative;
+}
+
+.team-member {
+  font-size: 1rem;
 }
 
 .sign-overlay {
@@ -1920,6 +1929,12 @@ hr {
   height: 100%;
   width: 100%;
   background: rgba(0, 0, 0, 0.5);
+}
+.sign-overlay2 {
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  background: rgba(0, 0, 0, 0.2);
 }
 
 .sign-split {
