@@ -145,6 +145,20 @@
                             </div>
 
                             <div class="fieldTab">
+                              <div class="input_field select_option">
+                                <select id="members" onchange="changeFunc()">
+                                  <option selected disabled>How many Team Members?</option>
+                                  <option value="1" class="memberOne">1</option>
+                                  <option value="2" class="memberTwo">2</option>
+                                  <option value="3" class="memberThree">3</option>
+                                  <option value="4" class="memberFour">4</option>
+                                
+                                </select>
+                                <div class="select_arrow"></div>
+                              </div>
+
+                              <!-- <div class="fieldTabChild"> -->
+                                <div class="member1">
                               <p class="team-member">Team Member 1</p>
                               <div class="row clearfix">
                                 <div class="col_half">
@@ -165,7 +179,9 @@
                                 <input type="email" name="email" id="email" placeholder="Email" required />
                                 
                               </div>
+                            </div>
 
+                            <div class="member2">
                               <p class="team-member">Team Member 2</p>
                               <div class="row clearfix">
                                 <div class="col_half">
@@ -184,9 +200,10 @@
 
                               <div class="input_field">
                                 <input type="email" name="email" id="email" placeholder="Email" required />
-                                
                               </div>
+                            </div>
 
+                            <div class="member3">
                               <p class="team-member">Team Member 3</p>
                               <div class="row clearfix">
                                 <div class="col_half">
@@ -205,8 +222,31 @@
 
                               <div class="input_field">
                                 <input type="email" name="email" id="email" placeholder="Email" required />
-                                
                               </div>
+                            </div>
+
+                            <div class="member4">
+                              <p class="team-member">Team Member 4</p>
+                              <div class="row clearfix">
+                                <div class="col_half">
+                                  <div class="input_field">
+                                    <input type="text" name="finm" id="finm" pattern="^([a-zA-Z]{2,} ?)+$" placeholder="First Name" required />
+                                    
+                                  </div>
+                                </div>
+                                <div class="col_half">
+                                  <div class="input_field">
+                                    <input type="text" name="lamn" id="lamn" pattern="^([a-zA-Z]{2,} ?)+$" placeholder="Last Name" required />
+                                    
+                                  </div>
+                                </div>
+                              </div>
+
+                              <div class="input_field">
+                                <input type="email" name="email" id="email" placeholder="Email" required />
+                              </div>
+                            </div>
+                            <!-- </div> -->
                             </div>
                           <button type="submit">Register</button>
                         </form>

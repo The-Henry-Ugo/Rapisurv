@@ -1912,7 +1912,7 @@ hr {
 }
 
 .reg-bg {
-  background: url(assets/images/learn.jpeg);
+  background: url(assets/images/learnpage.jpg);
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
@@ -1922,6 +1922,10 @@ hr {
 
 .team-member {
   font-size: 1rem;
+}
+
+.member1,.member2,.member3,.member4 {
+  display: none;
 }
 
 .sign-overlay {
@@ -2328,7 +2332,8 @@ hr {
     padding: 0 30px;
   }
 
-  .sign-bg {
+  .sign-bg,
+  .reg-bg {
     display: none;
   }
 
