@@ -24,7 +24,7 @@
  <script src="https://unpkg.com/ionicons@5.4.0/dist/ionicons.js"></script>
 <link rel=icon type=image/png sizes=64x64 href=assets/images/favicon2.png>
 </head>
-<body>
+<body id="uncheckTheDD">
     <nav class="nav">
       <a href="index.html">
         <div class="logo">
@@ -48,21 +48,15 @@
     <div class="header">
         <div class="inner-header flex">
         <section class="section"> 
-          <select>
-            <option selected disabled value="">Choose Your Plan Currency ($)</option>
-            <option value="1">Nigerian Naira (NGN)</option>
-            <option value="2">United States Dollar (USD)</option>
-          </select>
-
+          <div id="country"></div>
+          <ul class="tab-btns clearfix">
+            <li class="tab-btn active-btn">Monthly</li>
+             <a href="one-time.html"><li class="tab-btn">One-time</li></a>
+          </ul>
           <!-- Dollar Comparison Table -->
           <div class="dollarcomp">
-            <!-- <div class="years-pricing">
-              <p class="monthly" id="monthly" onclick="dollarmonthly()">Monthly</p>
-              <p class="oneyear" id="oneyear" onclick="dollaroneyear()">Yearly</p>
-              <p class="twoyears" id="twoyears" onclick="dollartwoyears()">2 years</p>
-            </div> -->
           <!-- Monthly Pricing Table -->
-                <div class="pricing dollar-pricing pricing-palden" style="margin-top: 3rem;">
+                <div class="pricing dollar-pricing pricing-palden">
                     <div class="pricing-item features-item ja-animate" data-animation="move-from-bottom" data-delay="item-1" style="min-height: 497px;">
                         <div class="pricing-deco">
                             <svg class="pricing-deco-img" enable-background="new 0 0 300 100" height="100px" id="Layer_1" preserveAspectRatio="none" version="1.1" viewBox="0 0 300 100" width="300px" x="0px" xml:space="preserve" y="0px">
@@ -86,8 +80,57 @@
                             <li class="pricing-feature"><ion-icon name="lock-closed-outline"></ion-icon></li>
                             <li class="pricing-feature"><ion-icon name="lock-closed-outline"></ion-icon></li>
                             <li class="pricing-feature"><ion-icon name="lock-closed-outline"></ion-icon></li>
+                            <li class="pricing-feature"><ion-icon name="lock-closed-outline"></ion-icon></li>
+                            <li class="pricing-feature"><ion-icon name="lock-closed-outline"></ion-icon></li>
                             <li class="pricing-feature">Single User</li>
                         </ul>
+
+                        <div class="add_on_container">
+                          <div class="add_on_text tool" data-tip="Add-ons serve users that want extra features outside the Rapisurv ecosystem." tabindex="1" >
+                            <ion-icon name="information-circle-outline"></ion-icon>
+                            <p>Add-ons</p>
+                          </div>
+                          <div class="add_on_dropdown_arrow">
+                            <label class="dropdown">
+    
+                              <div class="dd-button">
+                                <ion-icon name="chevron-down-outline"></ion-icon>
+                              </div>
+                            
+                              <input type="checkbox" class="dd-input" id="dd-check">
+                              <ul id="dd-menu">
+                                <!-- <span class="add_on_price"><strong>$250</strong> per feature</span> -->
+                                <li>
+                                  <span>Action ($250)</span>
+                                
+                                  <label class="checkbox style-c">
+                                    <input type="checkbox"/>
+                                    <div class="checkbox__checkmark"></div>
+                                  </label>
+                                </li>
+                                <li>
+                                  <span>Action ($250)</span>
+                                
+                                  <label class="checkbox style-c">
+                                    <input type="checkbox"/>
+                                    <div class="checkbox__checkmark"></div>
+                                  </label>
+                                </li>
+                                <li>
+                                  <span>Action ($250)</span>
+                                
+                                  <label class="checkbox style-c">
+                                    <input type="checkbox"/>
+                                    <div class="checkbox__checkmark"></div>
+                                  </label>
+                                </li>
+                                
+                              </ul>
+                              
+                            </label>
+                            
+                          </div>
+                        </div>
                         <a href="./usd_plans/standard.html"><button>Select</button></a>
                     </div>
                     <div class="pricing-item features-item ja-animate pricing__item--featured" data-animation="move-from-bottom" data-delay="item-2" style="min-height: 497px;">
@@ -107,14 +150,63 @@
                           <li class="pricing-feature">Takeoff</li>
                           <li class="pricing-feature">Bill of quantities</li>
                           <li class="pricing-feature">Estimating</li>
+                          <li class="pricing-feature">Rate Sheet</li>
                           <li class="pricing-feature">Tenders</li>
                           <li class="pricing-feature">Materials requirement</li>
-                          <li class="pricing-feature">Bid and Contract</li>
+                          <li class="pricing-feature">Bidding</li>
+                          <li class="pricing-feature">Bid management</li>
+                          <li class="pricing-feature">Contract</li>
                           <li class="pricing-feature">Legacy Contract</li>
-                          <li class="pricing-feature">Variation</li>
-                          <li class="pricing-feature">Valuation</li>
+                          <li class="pricing-feature">Variation & Valuation</li>
                           <li class="pricing-feature">Single User</li>
                         </ul>
+                        <div class="add_on_container">
+                          <div class="add_on_text tool" data-tip="Add-ons serve users that want extra features outside the Rapisurv ecosystem." tabindex="1" >
+                            <ion-icon name="information-circle-outline"></ion-icon>
+                            <p>Add-ons</p>
+                          </div>
+                          <div class="add_on_dropdown_arrow">
+                            <label class="dropdown">
+    
+                              <div class="dd-button">
+                                <ion-icon name="chevron-down-outline"></ion-icon>
+                              </div>
+                            
+                              <input type="checkbox" class="dd-input" id="dd-check">
+                            
+                              <ul id="dd-menu">
+                                <!-- <span class="add_on_price"><strong>$250</strong> per feature</span> -->
+                                <li>
+                                  <span>Action ($250)</span>
+                                
+                                  <label class="checkbox style-c">
+                                    <input type="checkbox"/>
+                                    <div class="checkbox__checkmark"></div>
+                                  </label>
+                                </li>
+                                <li>
+                                  <span>Action ($250)</span>
+                                
+                                  <label class="checkbox style-c">
+                                    <input type="checkbox"/>
+                                    <div class="checkbox__checkmark"></div>
+                                  </label>
+                                </li>
+                                <li>
+                                  <span>Action ($250)</span>
+                                
+                                  <label class="checkbox style-c">
+                                    <input type="checkbox"/>
+                                    <div class="checkbox__checkmark"></div>
+                                  </label>
+                                </li>
+                                
+                              </ul>
+                              
+                            </label>
+                            
+                          </div>
+                        </div>
                         <a href="./usd_plans/expert.html"><button>Select</button></a>
                     </div>
                     <div class="pricing-item features-item ja-animate" data-animation="move-from-bottom" data-delay="item-2" style="min-height: 497px;">
@@ -131,17 +223,66 @@
                           </div>
                       </div>
                       <ul class="pricing-feature-list">
-                          <li class="pricing-feature">Takeoff</li>
-                          <li class="pricing-feature">Bill of quantities</li>
-                          <li class="pricing-feature">Estimating</li>
-                          <li class="pricing-feature">Tenders</li>
-                          <li class="pricing-feature">Materials requirement</li>
-                          <li class="pricing-feature">Bid and Contract</li>
-                          <li class="pricing-feature">Legacy Contract</li>
-                          <li class="pricing-feature">Variation</li>
-                          <li class="pricing-feature">Valuation</li>
+                        <li class="pricing-feature">Takeoff</li>
+                        <li class="pricing-feature">Bill of quantities</li>
+                        <li class="pricing-feature">Estimating</li>
+                        <li class="pricing-feature">Rate Sheet</li>
+                        <li class="pricing-feature">Tenders</li>
+                        <li class="pricing-feature">Materials requirement</li>
+                        <li class="pricing-feature">Bidding</li>
+                        <li class="pricing-feature">Bid management</li>
+                        <li class="pricing-feature">Contract</li>
+                        <li class="pricing-feature">Legacy Contract</li>
+                        <li class="pricing-feature">Variation & Valuation</li>
                           <li class="pricing-feature">5 Users (2 Expert, 3 Standard)</li>
                       </ul>
+                      <div class="add_on_container">
+                        <div class="add_on_text tool" data-tip="Add-ons serve users that want extra features outside the Rapisurv ecosystem." tabindex="1" >
+                          <ion-icon name="information-circle-outline"></ion-icon>
+                          <p>Add-ons</p>
+                        </div>
+                        <div class="add_on_dropdown_arrow">
+                          <label class="dropdown">
+  
+                            <div class="dd-button">
+                              <ion-icon name="chevron-down-outline"></ion-icon>
+                            </div>
+                          
+                            <input type="checkbox" class="dd-input" id="dd-check">
+                          
+                            <ul id="dd-menu">
+                              <!-- <span class="add_on_price"><strong>$250</strong> per feature</span> -->
+                              <li>
+                                <span>Action ($250)</span>
+                              
+                                <label class="checkbox style-c">
+                                  <input type="checkbox"/>
+                                  <div class="checkbox__checkmark"></div>
+                                </label>
+                              </li>
+                              <li>
+                                <span>Action ($250)</span>
+                              
+                                <label class="checkbox style-c">
+                                  <input type="checkbox"/>
+                                  <div class="checkbox__checkmark"></div>
+                                </label>
+                              </li>
+                              <li>
+                                <span>Action ($250)</span>
+                              
+                                <label class="checkbox style-c">
+                                  <input type="checkbox"/>
+                                  <div class="checkbox__checkmark"></div>
+                                </label>
+                              </li>
+                              
+                            </ul>
+                            
+                          </label>
+                          
+                        </div>
+                      </div>
                       <a href="./usd_plans/team.html"><button>Select</button></a>
                   </div>       
                 </div>
@@ -154,33 +295,8 @@
                 <p class="naira-oneyear-tab" id="oneyear" onclick="nairaoneyear()">Yearly</p>
               </div> -->
               <div class="pricing naira-pricing naira-monthly pricing-palden" style="margin-top: 3rem;">
-                <div class="pricing-item features-item ja-animate" data-animation="move-from-bottom" data-delay="item-0" style="min-height: 497px;">
-                    <div class="pricing-deco">
-                        <svg class="pricing-deco-img" enable-background="new 0 0 300 100" height="100px" id="Layer_1" preserveAspectRatio="none" version="1.1" viewBox="0 0 300 100" width="300px" x="0px" xml:space="preserve" y="0px">
-                            <path class="deco-layer deco-layer--1" d="M30.913,43.944c0,0,42.911-34.464,87.51-14.191c77.31,35.14,113.304-1.952,146.638-4.729c48.654-4.056,69.94,16.218,69.94,16.218v54.396H30.913V43.944z" fill="#FFFFFF" opacity="0.6"></path>
-                            <path class="deco-layer deco-layer--2" d="M-35.667,44.628c0,0,42.91-34.463,87.51-14.191c77.31,35.141,113.304-1.952,146.639-4.729c48.653-4.055,69.939,16.218,69.939,16.218v54.396H-35.667V44.628z" fill="#FFFFFF" opacity="0.6"></path>
-                            <path class="deco-layer deco-layer--3" d="M43.415,98.342c0,0,48.283-68.927,109.133-68.927c65.886,0,97.983,67.914,97.983,67.914v3.716H42.401L43.415,98.342z" fill="#FFFFFF" opacity="0.7"></path>
-                            <path class="deco-layer deco-layer--4" d="M-34.667,62.998c0,0,56-45.667,120.316-27.839C167.484,57.842,197,41.332,232.286,30.428c53.07-16.399,104.047,36.903,104.047,36.903l1.333,36.667l-372-2.954L-34.667,62.998z" fill="#FFFFFF"></path>
-                        </svg>
-                        <h3 class="pricing-title">Basic</h3>
-                        <div class="pricing-price"><span class="pricing-currency">₦</span>15,000
-                            <span class="pricing-period">/ month</span>
-                        </div>
-                    </div>
-                    <ul class="pricing-feature-list">
-                        <li class="pricing-feature">Takeoff</li>
-                          <li class="pricing-feature">Bill of quantities</li>
-                          <li class="pricing-feature"><ion-icon name="lock-closed-outline"></ion-icon></li>
-                          <li class="pricing-feature"><ion-icon name="lock-closed-outline"></ion-icon></li>
-                          <li class="pricing-feature"><ion-icon name="lock-closed-outline"></ion-icon></li>
-                          <li class="pricing-feature"><ion-icon name="lock-closed-outline"></ion-icon></li>
-                          <li class="pricing-feature"><ion-icon name="lock-closed-outline"></ion-icon></li>
-                          <li class="pricing-feature"><ion-icon name="lock-closed-outline"></ion-icon></li>
-                          <li class="pricing-feature"><ion-icon name="lock-closed-outline"></ion-icon></li>
-                          <li class="pricing-feature">Single User</li>
-                    </ul>
-                    <a href="./naira_plans/basic.html"><button>Select</button></a>
-                </div>
+
+            
                 <div class="pricing-item features-item ja-animate" data-animation="move-from-bottom" data-delay="item-1" style="min-height: 497px;">
                     <div class="pricing-deco">
                         <svg class="pricing-deco-img" enable-background="new 0 0 300 100" height="100px" id="Layer_1" preserveAspectRatio="none" version="1.1" viewBox="0 0 300 100" width="300px" x="0px" xml:space="preserve" y="0px">
@@ -204,8 +320,57 @@
                           <li class="pricing-feature"><ion-icon name="lock-closed-outline"></ion-icon></li>
                           <li class="pricing-feature"><ion-icon name="lock-closed-outline"></ion-icon></li>
                           <li class="pricing-feature"><ion-icon name="lock-closed-outline"></ion-icon></li>
+                          <li class="pricing-feature"><ion-icon name="lock-closed-outline"></ion-icon></li>
+                          <li class="pricing-feature"><ion-icon name="lock-closed-outline"></ion-icon></li>
                           <li class="pricing-feature">Single User</li>
                     </ul>
+                    <div class="add_on_container">
+                      <div class="add_on_text tool" data-tip="Add-ons serve users that want extra features outside the Rapisurv ecosystem." tabindex="1" >
+                        <ion-icon name="information-circle-outline"></ion-icon>
+                        <p>Add-ons</p>
+                      </div>
+                      <div class="add_on_dropdown_arrow">
+                        <label class="dropdown">
+
+                          <div class="dd-button">
+                            <ion-icon name="chevron-down-outline"></ion-icon>
+                          </div>
+                        
+                          <input type="checkbox" class="dd-input" id="dd-check">
+                        
+                          <ul id="dd-menu">
+                              <!-- <span class="add_on_price"><strong>$250</strong> per feature</span> -->
+                              <li>
+                                <span>Action ($250)</span>
+                              
+                                <label class="checkbox style-c">
+                                  <input type="checkbox"/>
+                                  <div class="checkbox__checkmark"></div>
+                                </label>
+                              </li>
+                              <li>
+                                <span>Action ($250)</span>
+                              
+                                <label class="checkbox style-c">
+                                  <input type="checkbox"/>
+                                  <div class="checkbox__checkmark"></div>
+                                </label>
+                              </li>
+                              <li>
+                                <span>Action ($250)</span>
+                              
+                                <label class="checkbox style-c">
+                                  <input type="checkbox"/>
+                                  <div class="checkbox__checkmark"></div>
+                                </label>
+                              </li>
+                              
+                            </ul>
+                          
+                        </label>
+                        
+                      </div>
+                    </div>
                     <a href="./naira_plans/standard.html"><button>Select</button></a>
                 </div>
                 <div class="pricing-item features-item ja-animate pricing__item--featured" data-animation="move-from-bottom" data-delay="item-2" style="min-height: 497px;">
@@ -222,17 +387,66 @@
                         </div>
                     </div>
                     <ul class="pricing-feature-list">
-                        <li class="pricing-feature">Takeoff</li>
-                          <li class="pricing-feature">Bill of quantities</li>
-                          <li class="pricing-feature">Estimating</li>
-                          <li class="pricing-feature">Tenders</li>
-                          <li class="pricing-feature">Materials requirement</li>
-                          <li class="pricing-feature">Bid and Contract</li>
-                          <li class="pricing-feature">Legacy Contract</li>
-                          <li class="pricing-feature">Variation</li>
-                          <li class="pricing-feature">Valuation</li>
+                      <li class="pricing-feature">Takeoff</li>
+                      <li class="pricing-feature">Bill of quantities</li>
+                      <li class="pricing-feature">Estimating</li>
+                      <li class="pricing-feature">Rate Sheet</li>
+                      <li class="pricing-feature">Tenders</li>
+                      <li class="pricing-feature">Materials requirement</li>
+                      <li class="pricing-feature">Bidding</li>
+                      <li class="pricing-feature">Bid management</li>
+                      <li class="pricing-feature">Contract</li>
+                      <li class="pricing-feature">Legacy Contract</li>
+                      <li class="pricing-feature">Variation & Valuation</li>
                           <li class="pricing-feature">Single User</li>
                     </ul>
+                    <div class="add_on_container">
+                      <div class="add_on_text tool" data-tip="Add-ons serve users that want extra features outside the Rapisurv ecosystem." tabindex="1" >
+                        <ion-icon name="information-circle-outline"></ion-icon>
+                        <p>Add-ons</p>
+                      </div>
+                      <div class="add_on_dropdown_arrow">
+                        <label class="dropdown">
+
+                          <div class="dd-button">
+                            <ion-icon name="chevron-down-outline"></ion-icon>
+                          </div>
+                        
+                          <input type="checkbox" class="dd-input" id="dd-check">
+                        
+                          <ul id="dd-menu">
+                              <!-- <span class="add_on_price"><strong>$250</strong> per feature</span> -->
+                              <li>
+                                <span>Action ($250)</span>
+                              
+                                <label class="checkbox style-c">
+                                  <input type="checkbox"/>
+                                  <div class="checkbox__checkmark"></div>
+                                </label>
+                              </li>
+                              <li>
+                                <span>Action ($250)</span>
+                              
+                                <label class="checkbox style-c">
+                                  <input type="checkbox"/>
+                                  <div class="checkbox__checkmark"></div>
+                                </label>
+                              </li>
+                              <li>
+                                <span>Action ($250)</span>
+                              
+                                <label class="checkbox style-c">
+                                  <input type="checkbox"/>
+                                  <div class="checkbox__checkmark"></div>
+                                </label>
+                              </li>
+                              
+                            </ul>
+                          
+                        </label>
+                        
+                      </div>
+                    </div>
                     <a href="./naira_plans/expert.html"><button>Select</button></a>
                 </div>
                 <div class="pricing-item features-item ja-animate" data-animation="move-from-bottom" data-delay="item-2" style="min-height: 497px;">
@@ -249,15 +463,163 @@
                       </div>
                   </div>
                   <ul class="pricing-feature-list">
-                      <li class="pricing-feature">Takeoff</li>
+                    <li class="pricing-feature">Takeoff</li>
+                    <li class="pricing-feature">Bill of quantities</li>
+                    <li class="pricing-feature">Estimating</li>
+                    <li class="pricing-feature">Rate Sheet</li>
+                    <li class="pricing-feature">Tenders</li>
+                    <li class="pricing-feature">Materials requirement</li>
+                    <li class="pricing-feature">Bidding</li>
+                    <li class="pricing-feature">Bid management</li>
+                    <li class="pricing-feature">Contract</li>
+                    <li class="pricing-feature">Legacy Contract</li>
+                    <li class="pricing-feature">Variation & Valuation</li>
+                          <li class="pricing-feature">5 Users (2 Expert, 3 Standard)</li>
+                  </ul>
+                  <div class="add_on_container">
+                    <div class="add_on_text tool" data-tip="Add-ons serve users that want extra features outside the Rapisurv ecosystem." tabindex="1" >
+                      <ion-icon name="information-circle-outline"></ion-icon>
+                      <p>Add-ons</p>
+                    </div>
+                    <div class="add_on_dropdown_arrow">
+                      <label class="dropdown">
+
+                        <div class="dd-button">
+                          <ion-icon name="chevron-down-outline"></ion-icon>
+                        </div>
+                      
+                        <input type="checkbox" class="dd-input" id="dd-check">
+                      
+                        <ul id="dd-menu">
+                          <!-- <span class="add_on_price"><strong>$250</strong> per feature</span> -->
+                          <li>
+                            <span>Action ($250)</span>
+                          
+                            <label class="checkbox style-c">
+                              <input type="checkbox"/>
+                              <div class="checkbox__checkmark"></div>
+                            </label>
+                          </li>
+                          <li>
+                            <span>Action ($250)</span>
+                          
+                            <label class="checkbox style-c">
+                              <input type="checkbox"/>
+                              <div class="checkbox__checkmark"></div>
+                            </label>
+                          </li>
+                          <li>
+                            <span>Action ($250)</span>
+                          
+                            <label class="checkbox style-c">
+                              <input type="checkbox"/>
+                              <div class="checkbox__checkmark"></div>
+                            </label>
+                          </li>
+                          
+                        </ul>
+                        
+                      </label>
+                      
+                    </div>
+                  </div>
+                  <a href="./naira_plans/team.html"><button>Select</button></a>
+              </div>  
+            </div> 
+            </div>
+
+            <!-- Cedis Comparison Table -->
+            <div class="cediscomp">
+              <!-- <div class="years-pricing">
+                <p class="naira-monthly-tab" id="monthly" onclick="nairamonthly()">Monthly</p>
+                <p class="naira-oneyear-tab" id="oneyear" onclick="nairaoneyear()">Yearly</p>
+              </div> -->
+              <div class="pricing cedis-pricing cedis-monthly pricing-palden" style="margin-top: 3rem;">
+
+            
+                <div class="pricing-item features-item ja-animate" data-animation="move-from-bottom" data-delay="item-1" style="min-height: 497px;">
+                    <div class="pricing-deco">
+                        <svg class="pricing-deco-img" enable-background="new 0 0 300 100" height="100px" id="Layer_1" preserveAspectRatio="none" version="1.1" viewBox="0 0 300 100" width="300px" x="0px" xml:space="preserve" y="0px">
+                            <path class="deco-layer deco-layer--1" d="M30.913,43.944c0,0,42.911-34.464,87.51-14.191c77.31,35.14,113.304-1.952,146.638-4.729c48.654-4.056,69.94,16.218,69.94,16.218v54.396H30.913V43.944z" fill="#FFFFFF" opacity="0.6"></path>
+                            <path class="deco-layer deco-layer--2" d="M-35.667,44.628c0,0,42.91-34.463,87.51-14.191c77.31,35.141,113.304-1.952,146.639-4.729c48.653-4.055,69.939,16.218,69.939,16.218v54.396H-35.667V44.628z" fill="#FFFFFF" opacity="0.6"></path>
+                            <path class="deco-layer deco-layer--3" d="M43.415,98.342c0,0,48.283-68.927,109.133-68.927c65.886,0,97.983,67.914,97.983,67.914v3.716H42.401L43.415,98.342z" fill="#FFFFFF" opacity="0.7"></path>
+                            <path class="deco-layer deco-layer--4" d="M-34.667,62.998c0,0,56-45.667,120.316-27.839C167.484,57.842,197,41.332,232.286,30.428c53.07-16.399,104.047,36.903,104.047,36.903l1.333,36.667l-372-2.954L-34.667,62.998z" fill="#FFFFFF"></path>
+                        </svg>
+                        <h3 class="pricing-title">Standard</h3>
+                        <div class="pricing-price"><span class="pricing-currency">GH₵</span>100
+                            <span class="pricing-period">/ month</span>
+                        </div>
+                    </div>
+                    <ul class="pricing-feature-list">
+                        <li class="pricing-feature">Takeoff</li>
                           <li class="pricing-feature">Bill of quantities</li>
                           <li class="pricing-feature">Estimating</li>
+                          <li class="pricing-feature"><ion-icon name="lock-closed-outline"></ion-icon></li>
+                          <li class="pricing-feature"><ion-icon name="lock-closed-outline"></ion-icon></li>
+                          <li class="pricing-feature"><ion-icon name="lock-closed-outline"></ion-icon></li>
+                          <li class="pricing-feature"><ion-icon name="lock-closed-outline"></ion-icon></li>
+                          <li class="pricing-feature"><ion-icon name="lock-closed-outline"></ion-icon></li>
+                          <li class="pricing-feature"><ion-icon name="lock-closed-outline"></ion-icon></li>
+                          <li class="pricing-feature"><ion-icon name="lock-closed-outline"></ion-icon></li>
+                          <li class="pricing-feature"><ion-icon name="lock-closed-outline"></ion-icon></li>
+                          <li class="pricing-feature">Single User</li>
+                    </ul>
+                    <a href="./naira_plans/standard.html"><button>Select</button></a>
+                </div>
+                <div class="pricing-item features-item ja-animate pricing__item--featured" data-animation="move-from-bottom" data-delay="item-2" style="min-height: 497px;">
+                    <div class="pricing-deco" style="background: linear-gradient(135deg,#fea03b,#fdda4e)">
+                        <svg class="pricing-deco-img" enable-background="new 0 0 300 100" height="100px" id="Layer_1" preserveAspectRatio="none" version="1.1" viewBox="0 0 300 100" width="300px" x="0px" xml:space="preserve" y="0px">
+                            <path class="deco-layer deco-layer--1" d="M30.913,43.944c0,0,42.911-34.464,87.51-14.191c77.31,35.14,113.304-1.952,146.638-4.729c48.654-4.056,69.94,16.218,69.94,16.218v54.396H30.913V43.944z" fill="#FFFFFF" opacity="0.6"></path>
+                            <path class="deco-layer deco-layer--2" d="M-35.667,44.628c0,0,42.91-34.463,87.51-14.191c77.31,35.141,113.304-1.952,146.639-4.729c48.653-4.055,69.939,16.218,69.939,16.218v54.396H-35.667V44.628z" fill="#FFFFFF" opacity="0.6"></path>
+                            <path class="deco-layer deco-layer--3" d="M43.415,98.342c0,0,48.283-68.927,109.133-68.927c65.886,0,97.983,67.914,97.983,67.914v3.716H42.401L43.415,98.342z" fill="#FFFFFF" opacity="0.7"></path>
+                            <path class="deco-layer deco-layer--4" d="M-34.667,62.998c0,0,56-45.667,120.316-27.839C167.484,57.842,197,41.332,232.286,30.428c53.07-16.399,104.047,36.903,104.047,36.903l1.333,36.667l-372-2.954L-34.667,62.998z" fill="#FFFFFF"></path>
+                        </svg>
+                        <h3 class="pricing-title">Expert</h3>
+                        <div class="pricing-price"><span class="pricing-currency">GH₵</span>380
+                            <span class="pricing-period">/ month</span>
+                        </div>
+                    </div>
+                    <ul class="pricing-feature-list">
+                        <li class="pricing-feature">Takeoff</li>
+                          <li class="pricing-feature">Bill of quantities</li>
+                          <li class="pricing-feature">Estimating</li>
+                          <li class="pricing-feature">Rate Sheet</li>
                           <li class="pricing-feature">Tenders</li>
                           <li class="pricing-feature">Materials requirement</li>
-                          <li class="pricing-feature">Bid and Contract</li>
+                          <li class="pricing-feature">Bidding</li>
+                          <li class="pricing-feature">Bid management</li>
+                          <li class="pricing-feature">Contract</li>
                           <li class="pricing-feature">Legacy Contract</li>
-                          <li class="pricing-feature">Variation</li>
-                          <li class="pricing-feature">Valuation</li>
+                          <li class="pricing-feature">Variation & Valuation</li>
+                          <li class="pricing-feature">Single User</li>
+                    </ul>
+                    <a href="./naira_plans/expert.html"><button>Select</button></a>
+                </div>
+                <div class="pricing-item features-item ja-animate" data-animation="move-from-bottom" data-delay="item-2" style="min-height: 497px;">
+                  <div class="pricing-deco">
+                      <svg class="pricing-deco-img" enable-background="new 0 0 300 100" height="100px" id="Layer_1" preserveAspectRatio="none" version="1.1" viewBox="0 0 300 100" width="300px" x="0px" xml:space="preserve" y="0px">
+                          <path class="deco-layer deco-layer--1" d="M30.913,43.944c0,0,42.911-34.464,87.51-14.191c77.31,35.14,113.304-1.952,146.638-4.729c48.654-4.056,69.94,16.218,69.94,16.218v54.396H30.913V43.944z" fill="#FFFFFF" opacity="0.6"></path>
+                          <path class="deco-layer deco-layer--2" d="M-35.667,44.628c0,0,42.91-34.463,87.51-14.191c77.31,35.141,113.304-1.952,146.639-4.729c48.653-4.055,69.939,16.218,69.939,16.218v54.396H-35.667V44.628z" fill="#FFFFFF" opacity="0.6"></path>
+                          <path class="deco-layer deco-layer--3" d="M43.415,98.342c0,0,48.283-68.927,109.133-68.927c65.886,0,97.983,67.914,97.983,67.914v3.716H42.401L43.415,98.342z" fill="#FFFFFF" opacity="0.7"></path>
+                          <path class="deco-layer deco-layer--4" d="M-34.667,62.998c0,0,56-45.667,120.316-27.839C167.484,57.842,197,41.332,232.286,30.428c53.07-16.399,104.047,36.903,104.047,36.903l1.333,36.667l-372-2.954L-34.667,62.998z" fill="#FFFFFF"></path>
+                      </svg>
+                      <h3 class="pricing-title">Team</h3>
+                      <div class="pricing-price"><span class="pricing-currency">GH₵</span>1,500
+                          <span class="pricing-period">/ month</span>
+                      </div>
+                  </div>
+                  <ul class="pricing-feature-list">
+                    <li class="pricing-feature">Takeoff</li>
+                    <li class="pricing-feature">Bill of quantities</li>
+                    <li class="pricing-feature">Estimating</li>
+                    <li class="pricing-feature">Rate Sheet</li>
+                    <li class="pricing-feature">Tenders</li>
+                    <li class="pricing-feature">Materials requirement</li>
+                    <li class="pricing-feature">Bidding</li>
+                    <li class="pricing-feature">Bid management</li>
+                    <li class="pricing-feature">Contract</li>
+                    <li class="pricing-feature">Legacy Contract</li>
+                    <li class="pricing-feature">Variation & Valuation</li>
                           <li class="pricing-feature">5 Users (2 Expert, 3 Standard)</li>
                   </ul>
                   <a href="./naira_plans/team.html"><button>Select</button></a>
@@ -361,7 +723,25 @@
                   <td><span class="tick">&#10004;</span></td>
                 </tr>
                 <tr>
+                  <td>Rate Sheet</td>
+                  <td><span class="tick">&#10004;</span></td>
+                  <td class="default"><span class="tick">&#10004;</span></td>
+                  <td><span class="tick">&#10004;</span></td>
+                </tr>
+                <tr>
                     <td>Materials</td>
+                    <td><ion-icon name="lock-closed-outline"></ion-icon></td>
+                    <td class="default"><span class="tick">&#10004;</span></td>
+                    <td><span class="tick">&#10004;</span></td>
+                  </tr>
+                <tr>
+                    <td>Bidding</td>
+                    <td><ion-icon name="lock-closed-outline"></ion-icon></td>
+                    <td class="default"><span class="tick">&#10004;</span></td>
+                    <td><span class="tick">&#10004;</span></td>
+                  </tr>
+                <tr>
+                    <td>Bid Management</td>
                     <td><ion-icon name="lock-closed-outline"></ion-icon></td>
                     <td class="default"><span class="tick">&#10004;</span></td>
                     <td><span class="tick">&#10004;</span></td>
@@ -379,13 +759,13 @@
                     <td><span class="tick">&#10004;</span></td>
                   </tr>
                   <tr>
-                    <td>Variation</td>
+                    <td>Variation & Variation</td>
                     <td><ion-icon name="lock-closed-outline"></ion-icon></td>
                     <td class="default"><span class="tick">&#10004;</span></td>
                     <td><span class="tick">&#10004;</span></td>
                   </tr>
                   <tr>
-                    <td>Valuation</td>
+                    <td>Contract</td>
                     <td><ion-icon name="lock-closed-outline"></ion-icon></td>
                     <td class="default"><span class="tick">&#10004;</span></td>
                     <td><span class="tick">&#10004;</span></td>
@@ -428,8 +808,129 @@
   
               <ul>
                 <li class="bg-mintgreen">
-                  <button>BASIC</button>
+                  <button>STANDARD</button>
                 </li>
+                <li class="bg-orange active">
+                  <button>EXPERT</button>
+                </li>
+                <li class="bg-mintgreen">
+                  <button>TEAM</button>
+                </li>
+              </ul>  
+              
+              <table>
+                <thead>
+                  <tr>
+                    <th class="hide"></th>
+                    <th class="bg-mintgreen">STANDARD</th>
+                    <th class="bg-orange default">EXPERT</th>
+                    <th class="bg-mintgreen">TEAM</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr class="monthly-naira-table2">
+                    <td>Monthly</td>
+                    <td><span class="txt-top">₦</span><span class="txt-l">45,000</span></td>
+                    <td class="default"><span class="txt-top">₦</span><span class="txt-l">80,000</span></td>
+                    <td><span class="txt-top">₦</span><span class="txt-l">200,000</span></td>
+                  </tr>
+                  <tr class="yearly-naira-table2">
+                    <td>Yearly</td>
+                    <td><span class="txt-top">₦</span><span class="txt-l">450,000</span></td>
+                    <td class="default"><span class="txt-top">₦</span><span class="txt-l">900,000</span></td>
+                    <td><span class="txt-top">₦</span><span class="txt-l">2,000,000</span></td>
+                  </tr>
+                  <tr>
+                    <td colspan="4" class="sep">Getting started</td>
+                  </tr>
+                  <tr>
+                    <td>Number of Users</td>
+                    <td><span class="tick">Single User</span></td>
+                    <td class="default"><span class="tick">Single User</span></td>
+                    <td><span class="tick">5 Users</span></td>
+                  </tr>
+                 
+                  <tr>
+                    <td colspan="4" class="sep">Products</td>
+                  </tr>
+                  <tr>
+                    <td>Takeoff</td>
+                    <td><span class="tick">&#10004;</span></td>
+                    <td class="default"><span class="tick">&#10004;</span></td>
+                    <td><span class="tick">&#10004;</span></td>
+                  </tr>
+                  <tr>
+                    <td>Billing</td>
+                    <td><span class="tick">&#10004;</span></td>
+                    <td class="default"><span class="tick">&#10004;</span></td>
+                    <td><span class="tick">&#10004;</span></td>
+                  </tr>
+                  <tr>
+                    <td>Estimating</td>
+                    <td><span class="tick">&#10004;</span></td>
+                    <td class="default"><span class="tick">&#10004;</span></td>
+                    <td><span class="tick">&#10004;</span></td>
+                  </tr>
+                  <tr>
+                    <td>Rate Sheet</td>
+                    <td><span class="tick">&#10004;</span></td>
+                    <td class="default"><span class="tick">&#10004;</span></td>
+                    <td><span class="tick">&#10004;</span></td>
+                  </tr>
+                  <tr>
+                      <td>Materials</td>
+                      <td><ion-icon name="lock-closed-outline"></ion-icon></td>
+                      <td class="default"><span class="tick">&#10004;</span></td>
+                      <td><span class="tick">&#10004;</span></td>
+                    </tr>
+                  <tr>
+                      <td>Bidding</td>
+                      <td><ion-icon name="lock-closed-outline"></ion-icon></td>
+                      <td class="default"><span class="tick">&#10004;</span></td>
+                      <td><span class="tick">&#10004;</span></td>
+                    </tr>
+                  <tr>
+                      <td>Bid Management</td>
+                      <td><ion-icon name="lock-closed-outline"></ion-icon></td>
+                      <td class="default"><span class="tick">&#10004;</span></td>
+                      <td><span class="tick">&#10004;</span></td>
+                    </tr>
+                    <tr>
+                      <td>Legacy</td>
+                      <td><ion-icon name="lock-closed-outline"></ion-icon></td>
+                      <td class="default"><span class="tick">&#10004;</span></td>
+                      <td><span class="tick">&#10004;</span></td>
+                    </tr>
+                    <tr>
+                      <td>Tender</td>
+                      <td><ion-icon name="lock-closed-outline"></ion-icon></td>
+                      <td class="default"><span class="tick">&#10004;</span></td>
+                      <td><span class="tick">&#10004;</span></td>
+                    </tr>
+                    <tr>
+                      <td>Variation & Variation</td>
+                      <td><ion-icon name="lock-closed-outline"></ion-icon></td>
+                      <td class="default"><span class="tick">&#10004;</span></td>
+                      <td><span class="tick">&#10004;</span></td>
+                    </tr>
+                    <tr>
+                      <td>Contract</td>
+                      <td><ion-icon name="lock-closed-outline"></ion-icon></td>
+                      <td class="default"><span class="tick">&#10004;</span></td>
+                      <td><span class="tick">&#10004;</span></td>
+                    </tr>
+                </tbody>
+              </table>
+              </div>
+            </div>
+          </section>
+
+
+        <section id="comparison_table_cedis">
+          <div id="comparison_table">
+          <div class="container">
+  
+              <ul>
                 <li class="bg-mintgreen">
                   <button>STANDARD</button>
                 </li>
@@ -445,7 +946,6 @@
                 <thead>
                   <tr>
                     <th class="hide"></th>
-                    <th class="bg-mintgreen">BASIC</th>
                     <th class="bg-mintgreen">STANDARD</th>
                     <th class="bg-orange default">EXPERT</th>
                     <th class="bg-mintgreen">TEAM</th>
@@ -454,35 +954,37 @@
                 <tbody>
                   <tr class="monthly-naira-table2">
                     <td>Monthly</td>
-                    <td><span class="txt-top">₦</span><span class="txt-l">15,000</span></td>
-                    <td><span class="txt-top">₦</span><span class="txt-l">45,000</span></td>
-                    <td class="default"><span class="txt-top">₦</span><span class="txt-l">80,000</span></td>
-                    <td><span class="txt-top">₦</span><span class="txt-l">200,000</span></td>
+                    <td><span class="txt-top">GH₵</span><span class="txt-l">100</span></td>
+                    <td class="default"><span class="txt-top">GH₵</span><span class="txt-l">380</span></td>
+                    <td><span class="txt-top">GH₵</span><span class="txt-l">1,500</span></td>
                   </tr>
                   <tr class="yearly-naira-table2">
                     <td>Yearly</td>
-                    <td><span class="txt-top">₦</span><span class="txt-l">150,000</span></td>
-                    <td><span class="txt-top">₦</span><span class="txt-l">450,000</span></td>
-                    <td class="default"><span class="txt-top">₦</span><span class="txt-l">900,000</span></td>
-                    <td><span class="txt-top">₦</span><span class="txt-l">2,000,000</span></td>
+                    <td><span class="txt-top">GH₵</span><span class="txt-l">1,000</span></td>
+                    <td class="default"><span class="txt-top">GH₵</span><span class="txt-l">3,800</span></td>
+                    <td><span class="txt-top">GH₵</span><span class="txt-l">14,900</span></td>
+                  </tr>
+                  <tr class="twoyears-cedis-table2">
+                    <td>2 years</td>
+                    <td><span class="txt-top">GH₵</span><span class="txt-l">1,850</span></td>
+                    <td class="default"><span class="txt-top">GH₵</span><span class="txt-l">7,500</span></td>
+                    <td><span class="txt-top">GH₵</span><span class="txt-l">29,000</span></td>
                   </tr>
                   <tr>
-                    <td colspan="5" class="sep">Getting started</td>
+                    <td colspan="4" class="sep">Getting started</td>
                   </tr>
                   <tr>
                     <td>Number of Users</td>
-                    <td><span class="tick">Single User</span></td>
                     <td><span class="tick">Single User</span></td>
                     <td class="default"><span class="tick">Single User</span></td>
                     <td><span class="tick">5 Users</span></td>
                   </tr>
                  
                   <tr>
-                    <td colspan="5" class="sep">Products</td>
+                    <td colspan="4" class="sep">Products</td>
                   </tr>
                   <tr>
                     <td>Takeoff</td>
-                    <td><span class="tick">&#10004;</span></td>
                     <td><span class="tick">&#10004;</span></td>
                     <td class="default"><span class="tick">&#10004;</span></td>
                     <td><span class="tick">&#10004;</span></td>
@@ -490,13 +992,17 @@
                   <tr>
                     <td>Billing</td>
                     <td><span class="tick">&#10004;</span></td>
-                    <td><span class="tick">&#10004;</span></td>
                     <td class="default"><span class="tick">&#10004;</span></td>
                     <td><span class="tick">&#10004;</span></td>
                   </tr>
                   <tr>
                     <td>Estimating</td>
-                    <td><ion-icon name="lock-closed-outline"></ion-icon></td>
+                    <td><span class="tick">&#10004;</span></td>
+                    <td class="default"><span class="tick">&#10004;</span></td>
+                    <td><span class="tick">&#10004;</span></td>
+                  </tr>
+                  <tr>
+                    <td>Rate Sheet</td>
                     <td><span class="tick">&#10004;</span></td>
                     <td class="default"><span class="tick">&#10004;</span></td>
                     <td><span class="tick">&#10004;</span></td>
@@ -504,6 +1010,17 @@
                   <tr>
                       <td>Materials</td>
                       <td><ion-icon name="lock-closed-outline"></ion-icon></td>
+                      <td class="default"><span class="tick">&#10004;</span></td>
+                      <td><span class="tick">&#10004;</span></td>
+                    </tr>
+                  <tr>
+                      <td>Bidding</td>
+                      <td><ion-icon name="lock-closed-outline"></ion-icon></td>
+                      <td class="default"><span class="tick">&#10004;</span></td>
+                      <td><span class="tick">&#10004;</span></td>
+                    </tr>
+                  <tr>
+                      <td>Bid Management</td>
                       <td><ion-icon name="lock-closed-outline"></ion-icon></td>
                       <td class="default"><span class="tick">&#10004;</span></td>
                       <td><span class="tick">&#10004;</span></td>
@@ -511,27 +1028,23 @@
                     <tr>
                       <td>Legacy</td>
                       <td><ion-icon name="lock-closed-outline"></ion-icon></td>
-                      <td><ion-icon name="lock-closed-outline"></ion-icon></td>
                       <td class="default"><span class="tick">&#10004;</span></td>
                       <td><span class="tick">&#10004;</span></td>
                     </tr>
                     <tr>
                       <td>Tender</td>
                       <td><ion-icon name="lock-closed-outline"></ion-icon></td>
+                      <td class="default"><span class="tick">&#10004;</span></td>
+                      <td><span class="tick">&#10004;</span></td>
+                    </tr>
+                    <tr>
+                      <td>Variation & Variation</td>
                       <td><ion-icon name="lock-closed-outline"></ion-icon></td>
                       <td class="default"><span class="tick">&#10004;</span></td>
                       <td><span class="tick">&#10004;</span></td>
                     </tr>
                     <tr>
-                      <td>Variation</td>
-                      <td><ion-icon name="lock-closed-outline"></ion-icon></td>
-                      <td><ion-icon name="lock-closed-outline"></ion-icon></td>
-                      <td class="default"><span class="tick">&#10004;</span></td>
-                      <td><span class="tick">&#10004;</span></td>
-                    </tr>
-                    <tr>
-                      <td>Valuation</td>
-                      <td><ion-icon name="lock-closed-outline"></ion-icon></td>
+                      <td>Contract</td>
                       <td><ion-icon name="lock-closed-outline"></ion-icon></td>
                       <td class="default"><span class="tick">&#10004;</span></td>
                       <td><span class="tick">&#10004;</span></td>

@@ -18,14 +18,12 @@
 </script>
 <script src=https://code.jquery.com/jquery-3.4.1.slim.min.js></script>
 <script src=https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/js/bootstrap.min.js></script>
-<!-- <script src=https://cdn.jsdelivr.net/npm/glider-js@1/glider.min.js></script>
-<link href=https://cdn.jsdelivr.net/npm/glider-js@1/glider.min.css rel=stylesheet> -->
 <script src=https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/magnific-popup.js/1.1.0/jquery.magnific-popup.min.js"></script>
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/magnific-popup.js/1.1.0/magnific-popup.min.css" />
+<!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/magnific-popup.js/1.1.0/jquery.magnific-popup.min.js"></script>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/magnific-popup.js/1.1.0/magnific-popup.min.css" /> -->
  <!-- icons -->
  <script src="https://unpkg.com/ionicons@5.4.0/dist/ionicons.js"></script>
-<script src="js/modernizr-2.6.2.min.js"></script>
+<!-- <script src="js/modernizr-2.6.2.min.js"></script> -->
 <link rel=icon type=image/png sizes=64x64 href=assets/images/favicon2.png>
 </head>
 <body>
@@ -34,7 +32,7 @@
           <img src="assets/images/logo.png" alt="">
         </div>
         <ul class="nav-links">
-          <li><a href="index.html">Home</a></li>
+          <li><a class="current-nav" href="index.html">Home</a></li>
           <li><a class="beta-nav" href="products.html">Products <span>BETA</span></a></li>
           <li><a href="pricing.html">Pricing</a></li>
           <li><a href="contact.html">Contact</a></li>
@@ -47,85 +45,127 @@
           <div class="line3"></div>
         </div>
       </nav>
-    <section id="hero">
-      <div class="partners_bg"></div>
-      <div class="overlay_partner"></div>
-     
-  <span class="partners-hero-group">
-      <h1>Become a Rapisurv Partner.</h1>
-      <p>Isekit have created a generous partner program for Rapisurv to build a partner ecosystem that is well positioned to help every customer become better and more successful. Join us and make customers happy together.
-      </p>
-      <a href="#about"></a><button>Learn more</button></a>
-  </span>
-
-</div>
-    </section>
-
-    <section id="about">
-      <div class="container">
-        <div class="row gx-5 gy-5">
-          <div class="col-md-6">
-            <h2>Now is the best time.</h2>
-            <br>
-            <p>
-              This is a good time to join rapisurv partner program, the product is shaping up to be a game changer in the industry and customers are excited about it. Rapisurv delivers a solution that have been missing in the construction industry and you have an opportunity to join us and take advantage of the open space in a multi-billion-dollar market.
- <br><br>
-Our strategy is to deliver the speed and agility to customers so they can achieve their desired outcomes. But we can’t do it alone. We can only reach all prospective customers by joining forces with businesses like yours. Join us to make this happen.
-
-            </p>
-            <br>
-            <a href="partnersform.html"><button>Apply</button></a>
-          </div>
-          <div class="col-md-6">
-            <img src="assets/images/pexels-tima-miroshnichenko-5439439.jpg" class="img-fluid" alt="">
-          </div>
-        </div>
-      </div>
-    </section>
-
-<section id="options">
-  <div class="container">
-    <div class="options_header">
-    <h2>Choose a model and join Rapisurv business today.</h2>
-    <p>Rapisurv offers a generous partner program, you can become an Affiliate, Reseller or Value-Added Reseller (VAR).
-       <!-- Access simplified contracts, standardized and discounted program fees.  -->
-      </p>
-    </div>
-    <div class="row gx-5">
-      <div class="col-md-6">
-        <div class="partner_solution_title">
-        <img src="assets/images/up-arrow.png" alt=""><h3>Become an Affiliate</h3>
-        </div>
-        <p>Ideal for customers or non-customers who may want to refer and onboard new customers. They can refer individuals or businesses to buy non-enterprise plans.
-        </p>
-        <br>
-        <a href="affiliate.html"><button>Learn more</button></a>
-      </div>
-
-      <div class="col-md-6">
-        <div class="partner_solution_title">
-        <img src="assets/images/upper-arrow.png" alt=""><h3>Sell Solutions</h3>
-        </div>
-        <p>Ideal for resellers and value-added resellers (VARs) that resell and implement solutions for customers. This is a B2B opportunity and ideal for selling enterprise licenses.
-        </p>
-        <br>
-        <a href="seller.html"><button>Learn more</button></a>
-      </div>
-    </div>
-  </div>
-</section>
-
-    <section class="join section-join">
-        <div class="join__bg">
-            <div class="join__container">
-                <img src="assets/images/map.png" alt="">
-              <h2 class="text-center" style="color: #fff;">
-                Become a partner today and make customers happy together.
-              </h2>
-              <a href="partnersform.html"><button>Apply now</button></a>
+   
+      <section id="one-time">
+        <div class="container">
+          <h2>Checkout</h2>
+          <div class="plan_table">
+            <div class="first_half_checkout">
+              <!-- <div class="user_options">
+                <div class="user_type">
+                  <span>Currency: NGN</span>
+                  <div class="user-group">
+                    <input type="radio" id="individual-onetime" name="user-type" />
+                    <label for="individual-onetime">Individual</label>
+                  </div>
+                
+                  <div class="user-group">
+                    <input type="radio" id="team-onetime" name="user-type" />
+                    <label for="team-onetime">Team (up to 5 users)</label>
+                    <div class="number">
+                      <span class="minus">-</span>
+                      <input type="text" value="1"/>
+                      <span class="plus">+</span>
+                    </div>
+                  </div>
+                </div>
+                <div class="user_choice">
+                  <span>Don't know what to choose?</span>
+                </div>
+              </div> -->
+              <h3>Billing Details</h3>
+              <!-- <div class="form_wrapper"> -->
+                <div class="checkout_form">
+                <div class="form_container">
+              <form action="#">
+                <div class="input_field">
+                  <p>First Name</p>
+                  <input type="text" required />
+                </div>
+                <div class="input_field">
+                  <p>Last Name</p>
+                  <input type="text" required />
+                </div>
+                <div class="input_field select_option">
+                  <p>Country / Region</p>
+                  <select>
+                    <option selected disabled></option>
+                    <option value="Afghanistan">Afghanistan</option>
+                    <option value="Åland Islands">Åland Islands</option>
+                    <option value="Albania">Albania</option>
+                  
+                  </select>
+                  <div class="select_arrow"></div>
+                </div>
+                <div class="input_field">
+                  <p>Street Address</p>
+                  <input type="text" required />
+                </div>
+                <div class="input_field">
+                  <p>Town / City</p>
+                  <input type="text" required />
+                </div>
+                <div class="input_field select_option">
+                  <p>State</p>
+                  <select>
+                    <option selected disabled></option>
+                    <option value="Afghanistan">Afghanistan</option>
+                    <option value="Åland Islands">Åland Islands</option>
+                    <option value="Albania">Albania</option>
+                  
+                  </select>
+                  <div class="select_arrow"></div>
+                </div>
+                <div class="input_field">
+                  <p>Zip Code</p>
+                  <input type="text" required />
+                </div>
+                <div class="input_field">
+                  <p>Phone</p>
+                  <input type="text" required />
+                </div>
+                <div class="input_field">
+                  <p>Email Address</p>
+                  <input type="email" required />
+                </div>
+              </form>
+              </div>
+              </div>
             </div>
+            <div class="second_half">
+              <h4>Your Order</h4>
+              <div class="total_count">
+                <div class="bill">
+                  <p class="bill_title">Default</p>
+                  <p class="bill_price">₦ 2000</p>
+                </div>
+            
+                <div class="bill">
+                  <p class="bill_title">Options</p>
+                  <p class="bill_price">₦ 2000</p>
+                </div>
+            
+                <div class="bill">
+                  <p class="bill_title">Total</p>
+                  <p class="bill_price">₦ 2000</p>
+                </div>
+            
+                <div class="bill">
+                  <p class="bill_title">Tax (7.5%)</p>
+                  <p class="bill_price">₦ 2000</p>
+                </div>
+            
+                <div class="bill">
+                  <p class="bill_title">Total Due</p>
+                  <p class="bill_price">₦ 2000</p>
+                </div>
+              </div>
+              <button id="payNowButton">PAY NOW</button>
+             
+          </div>
+          </div>
         </div>
-    </section>
+      </section>
 
     <footer class=site-footer id=footer-contact>
         <div class=container>
